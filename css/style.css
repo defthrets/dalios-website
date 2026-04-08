@@ -1529,6 +1529,67 @@ section {
   display: block;
 }
 
+/* ── Rex Mascot ── */
+.rex-mascot {
+  display: block;
+  max-width: 180px;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(249,115,22,0.3));
+  transition: transform 0.3s ease;
+}
+.rex-mascot:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+.rex-hero {
+  position: absolute;
+  right: -30px;
+  bottom: -10px;
+  max-width: 160px;
+  z-index: 2;
+  animation: rexFloat 3s ease-in-out infinite;
+}
+.rex-section {
+  max-width: 200px;
+  margin: 0 auto;
+}
+.rex-cta {
+  max-width: 220px;
+}
+.rex-inline {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 120px;
+}
+@keyframes rexFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* CTA with Rex layout */
+.cta-with-rex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.cta-with-rex .cta-text {
+  text-align: center;
+}
+
+/* Features section Rex accent */
+.features-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.features-section-header .section-header {
+  flex: 1;
+  min-width: 300px;
+}
+
 /* ── Responsive additions ── */
 @media (max-width: 768px) {
   .showcase-grid { grid-template-columns: 1fr; }
@@ -1536,4 +1597,8 @@ section {
   .broker-grid { grid-template-columns: 1fr; }
   .preview-header { flex-direction: column; gap: 0.75rem; }
   .preview-number { text-align: left; }
+  .rex-hero { display: none; }
+  .rex-mascot { max-width: 140px; }
+  .rex-cta { max-width: 160px; }
+  .cta-with-rex { gap: 1.5rem; }
 }
