@@ -8,10 +8,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg-primary: #0c0a09;
-  --bg-secondary: #1c1917;
-  --bg-card: #211f1d;
-  --bg-card-hover: #292524;
+  --bg-primary: #1c1917;
+  --bg-secondary: #231f1d;
+  --bg-card: #2a2523;
+  --bg-card-hover: #322c29;
   --border: #3d3835;
   --border-glow: #f59e0b;
   --text-primary: #fafaf9;
@@ -105,7 +105,7 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 14, 23, 0.92);
+  background: rgba(12, 10, 9, 0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   padding: 0 2rem;
