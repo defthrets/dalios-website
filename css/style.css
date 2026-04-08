@@ -1615,6 +1615,29 @@ section {
   display: block;
 }
 
+/* ── Download Stats Counter ── */
+.download-stats {
+  display: none;
+  margin-top: 0.75rem;
+}
+.download-stats.visible {
+  display: block;
+}
+.download-stats-count {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+#download-count {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
 /* ── Rex Mascot ── */
 .rex-mascot {
   display: block;

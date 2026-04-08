@@ -305,41 +305,44 @@
         <span class="section-label">// Download</span>
         <h2>Get DALIOS</h2>
         <p>100% free. No subscriptions, no hidden fees. Available on all platforms.</p>
+        <div class="download-stats">
+          <span class="download-stats-count"><span id="download-count">0</span> downloads</span>
+        </div>
       </div>
       <div class="download-grid">
         <div class="download-card">
           <div class="download-icon">&#128187;</div>
           <h3>Windows</h3>
           <p>Windows 10/11 (64-bit)</p>
-          <a href="#" class="btn btn-primary btn-sm">&#11015; Download .exe</a>
+          <a href="#" onclick="trackDownload('windows')" class="btn btn-primary btn-sm">&#11015; Download .exe</a>
           <span class="download-meta">v2.0 &middot; ~85 MB</span>
         </div>
         <div class="download-card">
           <div class="download-icon">&#63743;</div>
           <h3>macOS</h3>
           <p>macOS 12+ (Intel &amp; Apple Silicon)</p>
-          <a href="#" class="btn btn-primary btn-sm">&#11015; Download .dmg</a>
+          <a href="#" onclick="trackDownload('macos')" class="btn btn-primary btn-sm">&#11015; Download .dmg</a>
           <span class="download-meta">v2.0 &middot; ~90 MB</span>
         </div>
         <div class="download-card">
           <div class="download-icon">&#128039;</div>
           <h3>Linux</h3>
           <p>Ubuntu 20.04+ / Debian / Fedora</p>
-          <a href="#" class="btn btn-primary btn-sm">&#11015; Download .AppImage</a>
+          <a href="#" onclick="trackDownload('linux')" class="btn btn-primary btn-sm">&#11015; Download .AppImage</a>
           <span class="download-meta">v2.0 &middot; ~80 MB</span>
         </div>
         <div class="download-card">
           <div class="download-icon">&#128241;</div>
           <h3>Android</h3>
           <p>Android 12+ (APK)</p>
-          <a href="#" class="btn btn-primary btn-sm">&#11015; Download .apk</a>
+          <a href="#" onclick="trackDownload('android')" class="btn btn-primary btn-sm">&#11015; Download .apk</a>
           <span class="download-meta">v2.0 &middot; Kivy + FastAPI</span>
         </div>
         <div class="download-card">
           <div class="download-icon">&#128241;</div>
           <h3>iOS</h3>
           <p>iPhone &amp; iPad</p>
-          <a href="#" class="btn btn-primary btn-sm">&#11015; Xcode Project</a>
+          <a href="#" onclick="trackDownload('ios')" class="btn btn-primary btn-sm">&#11015; Xcode Project</a>
           <span class="download-meta">v2.0 &middot; Kivy + WKWebView</span>
         </div>
       </div>

@@ -29,6 +29,46 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// ── Download Tracking ──
+// Set this to your Cloudflare Worker URL after deploying
+const TRACKER_URL = '';
+
+function trackDownload(platform) {
+  if (!TRACKER_URL) return;
+  try {
+    navigator.sendBeacon(
+      TRACKER_URL + '/track',
+      JSON.stringify({ platform })
+    );
+  } catch (e) {
+    // Silent fail — don't block the download
+    fetch(TRACKER_URL + '/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ platform }),
+      keepalive: true,
+    }).catch(() => {});
+  }
+}
+
+// Load and display download stats
+async function loadDownloadStats() {
+  if (!TRACKER_URL) return;
+  try {
+    const res = await fetch(TRACKER_URL + '/stats');
+    const stats = await res.json();
+    const el = document.getElementById('download-count');
+    if (el && stats.total) {
+      el.textContent = stats.total.toLocaleString();
+      el.closest('.download-stats')?.classList.add('visible');
+    }
+  } catch (e) {
+    // Silent fail
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadDownloadStats);
+
 // Copy code button
 function copyCode(btn) {
   const codeBlock = btn.closest('.code-block');
