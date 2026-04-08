@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — DALIOS</title>
+  <meta name="description" content="Complete documentation for the DALIOS Autonomous Trading Framework. Installation, configuration, API reference, and architecture guide.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9670;</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <div class="logo-icon">D</div>
+      <h1>DALIOS</h1>
+      <span class="version">v2.0</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="docs.html" class="active">Documentation</a></li>
+      <li><a href="dashboard.html">Live Dashboard</a></li>
+      <li><a href="https://github.com/defthrets/dalios-website" target="_blank">GitHub</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+
+  <!-- Docs Layout -->
+  <div class="container-wide">
+    <div class="docs-layout">
+
+      <!-- Sidebar -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-section">
+          <h4>Getting Started</h4>
+          <a href="#overview" class="active">Overview</a>
+          <a href="#getting-started">Installation</a>
+          <a href="#quick-start">Quick Start</a>
+          <a href="#configuration">Configuration</a>
+        </div>
+        <div class="docs-sidebar-section">
+          <h4>Architecture</h4>
+          <a href="#architecture">System Architecture</a>
+          <a href="#modules">Module Reference</a>
+          <a href="#dalio-model">Dalio Economic Model</a>
+        </div>
+        <div class="docs-sidebar-section">
+          <h4>API Reference</h4>
+          <a href="#api-endpoints">REST Endpoints</a>
+          <a href="#websocket">WebSocket API</a>
+        </div>
+        <div class="docs-sidebar-section">
+          <h4>Operations</h4>
+          <a href="#risk-management">Risk Management</a>
+          <a href="#backtesting">Backtesting</a>
+          <a href="#notifications">Notifications</a>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <main class="docs-content">
+
+        <!-- Overview -->
+        <section id="overview">
+          <h1>DALIOS Documentation</h1>
+          <p style="font-size:1.15rem;color:var(--text-secondary);margin-bottom:2rem;">
+            Complete guide to deploying and operating the DALIOS Autonomous Trading Framework.
+          </p>
+
+          <div class="callout callout-info">
+            <p><strong>DALIOS</strong> is a Ray Dalio-inspired autonomous trading system designed for ASX equities and global commodities. It combines the All Weather portfolio strategy with the Economic Machine framework for intelligent, risk-managed trading.</p>
+          </div>
+
+          <h3>Key Capabilities</h3>
+          <ul>
+            <li><strong>Autonomous Signal Generation</strong> — AI-powered BUY/SELL/SHORT/LONG signals with confidence scoring</li>
+            <li><strong>Risk Parity Optimization</strong> — Riskfolio-Lib powered portfolio weight optimization</li>
+            <li><strong>FinBERT Sentiment Analysis</strong> — NLP-driven news and market sentiment scanning</li>
+            <li><strong>Economic Quadrant Classification</strong> — Growth/Inflation regime detection and allocation</li>
+            <li><strong>Walk-Forward Backtesting</strong> — 12-month train / 3-month test rolling validation</li>
+            <li><strong>Real-Time Dashboard</strong> — 7-tab military terminal UI with WebSocket live feeds</li>
+            <li><strong>Circuit Breaker System</strong> — Automated risk limits and position stop-losses</li>
+            <li><strong>Multi-Channel Alerts</strong> — Discord webhook and Telegram bot notifications</li>
+          </ul>
+        </section>
+
+        <!-- Getting Started -->
+        <section id="getting-started">
+          <h2>Installation</h2>
+
+          <h3>Prerequisites</h3>
+          <ul>
+            <li><code>Python 3.10+</code></li>
+            <li><code>pip</code> or <code>conda</code></li>
+            <li><code>Git</code></li>
+            <li>Internet connection for market data feeds</li>
+          </ul>
+
+          <h3>Clone &amp; Install</h3>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">bash</span>
+              <button class="code-block-copy" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code><span class="comment"># Clone the repository</span>
+git clone https://github.com/defthrets/dalio-trading-system.git
+<span class="keyword">cd</span> dalio-trading-system
+
+<span class="comment"># Create virtual environment</span>
+python -m venv venv
+source venv/bin/activate  <span class="comment"># Windows: venv\Scripts\activate</span>
+
+<span class="comment"># Install dependencies</span>
+pip install -r requirements.txt</code></pre>
+          </div>
+
+          <h3>Dependencies</h3>
+          <table class="docs-table">
+            <thead>
+              <tr>
+                <th>Package</th>
+                <th>Purpose</th>
+                <th>Version</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>fastapi</code></td><td>REST API &amp; WebSocket server</td><td>&gt;=0.104</td></tr>
+              <tr><td><code>uvicorn</code></td><td>ASGI server</td><td>&gt;=0.24</td></tr>
+              <tr><td><code>yfinance</code></td><td>Market data feeds</td><td>&gt;=0.2</td></tr>
+              <tr><td><code>riskfolio-lib</code></td><td>Risk parity optimization</td><td>&gt;=4.0</td></tr>
+              <tr><td><code>transformers</code></td><td>FinBERT NLP models</td><td>&gt;=4.35</td></tr>
+              <tr><td><code>apscheduler</code></td><td>Task scheduling</td><td>&gt;=3.10</td></tr>
+              <tr><td><code>pandas</code></td><td>Data manipulation</td><td>&gt;=2.0</td></tr>
+              <tr><td><code>numpy</code></td><td>Numerical operations</td><td>&gt;=1.24</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Quick Start -->
+        <section id="quick-start">
+          <h2>Quick Start</h2>
+
+          <h3>1. Configure Environment</h3>
+          <p>Copy the example environment file and set your API keys:</p>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">bash</span>
+              <button class="code-block-copy" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code>cp .env.example .env</code></pre>
+          </div>
+
+          <h3>2. Start the Server</h3>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">bash</span>
+              <button class="code-block-copy" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code><span class="comment"># Option A: Windows launcher</span>
+run_ui.bat
+
+<span class="comment"># Option B: Manual start</span>
+python -m uvicorn api.server:app --port 8000 --reload
+
+<span class="comment"># Option C: Full autonomous mode with APScheduler</span>
+python main.py</code></pre>
+          </div>
+
+          <h3>3. Open the Dashboard</h3>
+          <p>Navigate to <code>http://localhost:8000</code> in your browser. The 7-tab command interface will load automatically.</p>
+
+          <div class="callout callout-warning">
+            <p><strong>Note:</strong> The first launch may take a few minutes as FinBERT models are downloaded (~400MB). Subsequent starts are instant.</p>
+          </div>
+        </section>
+
+        <!-- Configuration -->
+        <section id="configuration">
+          <h2>Configuration</h2>
+          <p>All configuration is managed through environment variables in your <code>.env</code> file or via the COMMS tab in the UI.</p>
+
+          <h3>Core Settings</h3>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">.env</span>
+              <button class="code-block-copy" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code><span class="comment"># Market Configuration</span>
+<span class="variable">MARKET</span>=<span class="string">ASX</span>
+<span class="variable">SCAN_INTERVAL</span>=<span class="string">30</span>          <span class="comment"># seconds between scans</span>
+<span class="variable">MAX_POSITIONS</span>=<span class="string">15</span>         <span class="comment"># maximum concurrent positions</span>
+
+<span class="comment"># Risk Management</span>
+<span class="variable">MAX_DRAWDOWN</span>=<span class="string">0.15</span>        <span class="comment"># 15% maximum drawdown trigger</span>
+<span class="variable">CIRCUIT_BREAKER</span>=<span class="string">true</span>     <span class="comment"># enable circuit breaker</span>
+<span class="variable">POSITION_SIZE_PCT</span>=<span class="string">0.05</span>   <span class="comment"># 5% max per position</span>
+
+<span class="comment"># Notifications</span>
+<span class="variable">DISCORD_WEBHOOK_URL</span>=<span class="string">https://discord.com/api/webhooks/...</span>
+<span class="variable">TELEGRAM_BOT_TOKEN</span>=<span class="string">your-token-here</span>
+<span class="variable">TELEGRAM_CHAT_ID</span>=<span class="string">your-chat-id</span>
+
+<span class="comment"># API Keys (optional — for live trading)</span>
+<span class="variable">BROKER_API_KEY</span>=<span class="string">your-broker-key</span>
+<span class="variable">BROKER_SECRET</span>=<span class="string">your-broker-secret</span></code></pre>
+          </div>
+
+          <div class="callout callout-danger">
+            <p><strong>Security:</strong> Never commit your <code>.env</code> file. It is excluded in <code>.gitignore</code> by default. Rotate API keys regularly.</p>
+          </div>
+        </section>
+
+        <!-- Architecture -->
+        <section id="architecture">
+          <h2>System Architecture</h2>
+
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">directory structure</span>
+            </div>
+            <pre><code>dalio-trading-system/
+&#9500;&#9472;&#9472; api/
+&#9474;   &#9492;&#9472;&#9472; server.py              <span class="comment"># FastAPI backend + WebSocket</span>
+&#9500;&#9472;&#9472; agents/
+&#9474;   &#9492;&#9472;&#9472; dalio_agent.py         <span class="comment"># AI orchestrator (Dalio principles)</span>
+&#9500;&#9472;&#9472; engines/
+&#9474;   &#9500;&#9472;&#9472; correlation_engine.py   <span class="comment"># Asset correlation analysis</span>
+&#9474;   &#9500;&#9472;&#9472; risk_parity_engine.py   <span class="comment"># Riskfolio-Lib optimization</span>
+&#9474;   &#9500;&#9472;&#9472; sentiment_engine.py     <span class="comment"># FinBERT NLP pipeline</span>
+&#9474;   &#9492;&#9472;&#9472; quadrant_engine.py      <span class="comment"># Dalio quadrant classification</span>
+&#9500;&#9472;&#9472; trading/
+&#9474;   &#9500;&#9472;&#9472; signal_generator.py     <span class="comment"># BUY/SELL/SHORT signal logic</span>
+&#9474;   &#9500;&#9472;&#9472; execution.py            <span class="comment"># Order execution engine</span>
+&#9474;   &#9492;&#9472;&#9472; circuit_breaker.py      <span class="comment"># Risk limit enforcement</span>
+&#9500;&#9472;&#9472; backtesting/
+&#9474;   &#9492;&#9472;&#9472; walk_forward.py         <span class="comment"># Walk-forward optimizer</span>
+&#9500;&#9472;&#9472; notifications/
+&#9474;   &#9500;&#9472;&#9472; discord_hook.py         <span class="comment"># Discord webhook integration</span>
+&#9474;   &#9492;&#9472;&#9472; telegram_bot.py         <span class="comment"># Telegram bot integration</span>
+&#9500;&#9472;&#9472; ui/
+&#9474;   &#9500;&#9472;&#9472; index.html              <span class="comment"># 7-tab terminal dashboard</span>
+&#9474;   &#9492;&#9472;&#9472; static/
+&#9474;       &#9500;&#9472;&#9472; style.css           <span class="comment"># Terminal theme</span>
+&#9474;       &#9492;&#9472;&#9472; app.js              <span class="comment"># Chart.js + WebSocket client</span>
+&#9500;&#9472;&#9472; config/
+&#9474;   &#9492;&#9472;&#9472; settings.py             <span class="comment"># Pydantic settings from .env</span>
+&#9500;&#9472;&#9472; main.py                         <span class="comment"># APScheduler entry point</span>
+&#9492;&#9472;&#9472; run_ui.bat                      <span class="comment"># Windows launcher</span></code></pre>
+          </div>
+
+          <h3>Data Flow</h3>
+          <p>The system follows a continuous intelligence loop:</p>
+          <ol>
+            <li><strong>Data Ingestion</strong> — yfinance fetches real-time prices. News scrapers feed FinBERT.</li>
+            <li><strong>Quadrant Classification</strong> — Growth and inflation indicators map to Dalio's 4 quadrants.</li>
+            <li><strong>Risk Parity Optimization</strong> — Riskfolio-Lib calculates optimal weights for 15+ uncorrelated assets.</li>
+            <li><strong>Signal Generation</strong> — The Dalio Agent synthesizes all inputs into actionable BUY/SELL/SHORT signals.</li>
+            <li><strong>Circuit Breaker Validation</strong> — Signals pass through risk limits before execution.</li>
+            <li><strong>Execution &amp; Notification</strong> — Valid signals are executed. Alerts fire to Discord/Telegram.</li>
+          </ol>
+        </section>
+
+        <!-- Modules -->
+        <section id="modules">
+          <h2>Module Reference</h2>
+
+          <h3>Dalio Agent <code>agents/dalio_agent.py</code></h3>
+          <p>The central AI orchestrator. It applies Ray Dalio's principles to generate trading decisions, manages the economic cycle model, and coordinates all engine outputs.</p>
+
+          <h3>Correlation Engine <code>engines/correlation_engine.py</code></h3>
+          <p>Computes rolling correlations across all portfolio assets. Powers the Holy Grail diversification meter and identifies correlation regime changes.</p>
+
+          <h3>Risk Parity Engine <code>engines/risk_parity_engine.py</code></h3>
+          <p>Uses Riskfolio-Lib to compute optimal portfolio weights that equalize risk contribution across assets. Supports multiple risk measures including CVaR.</p>
+
+          <h3>Sentiment Engine <code>engines/sentiment_engine.py</code></h3>
+          <p>FinBERT-based NLP pipeline that scores news articles and market commentary on a bearish-to-bullish scale. Feeds into the Intel Center and signal generation.</p>
+
+          <h3>Quadrant Engine <code>engines/quadrant_engine.py</code></h3>
+          <p>Classifies current macro conditions into one of Dalio's four quadrants (Growth +/- and Inflation +/-) and adjusts asset allocation templates accordingly.</p>
+        </section>
+
+        <!-- Dalio Model -->
+        <section id="dalio-model">
+          <h2>Dalio Economic Model</h2>
+          <p>DALIOS implements two key frameworks from Ray Dalio:</p>
+
+          <h3>All Weather Strategy</h3>
+          <p>A risk-parity approach that aims to perform well in all economic environments by holding a diversified mix of assets with balanced risk contributions. Unlike traditional 60/40 portfolios, All Weather equalizes <em>risk</em> not <em>capital allocation</em>.</p>
+
+          <h3>Economic Machine</h3>
+          <p>Dalio's model describes the economy as driven by three forces: productivity growth, the short-term debt cycle, and the long-term debt cycle. DALIOS uses this framework to classify market regimes and adjust strategy accordingly.</p>
+
+          <table class="docs-table">
+            <thead>
+              <tr>
+                <th>Quadrant</th>
+                <th>Growth</th>
+                <th>Inflation</th>
+                <th>Favored Assets</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:var(--green);">Quadrant I</td>
+                <td>Rising</td>
+                <td>Rising</td>
+                <td>Commodities, TIPS, EM Equities</td>
+              </tr>
+              <tr>
+                <td style="color:var(--blue);">Quadrant II</td>
+                <td>Rising</td>
+                <td>Falling</td>
+                <td>Equities, Corporate Bonds</td>
+              </tr>
+              <tr>
+                <td style="color:var(--yellow);">Quadrant III</td>
+                <td>Falling</td>
+                <td>Rising</td>
+                <td>Gold, Commodities, ILBs</td>
+              </tr>
+              <tr>
+                <td style="color:var(--red);">Quadrant IV</td>
+                <td>Falling</td>
+                <td>Falling</td>
+                <td>Nominal Bonds, Defensive Equities</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- API Endpoints -->
+        <section id="api-endpoints">
+          <h2>REST API Endpoints</h2>
+          <p>The FastAPI server exposes the following endpoints at <code>http://localhost:8000</code>:</p>
+
+          <table class="docs-table">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>GET</code></td><td><code>/api/portfolio</code></td><td>Current portfolio state and metrics</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/signals</code></td><td>Active trade signals with confidence</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/sentiment</code></td><td>FinBERT sentiment scores and news</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/correlations</code></td><td>Asset correlation matrix</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/risk</code></td><td>Risk metrics (Sharpe, Sortino, drawdown)</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/backtest</code></td><td>Walk-forward results</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/quadrant</code></td><td>Current economic quadrant</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/positions</code></td><td>Open positions table</td></tr>
+              <tr><td><code>POST</code></td><td><code>/api/config</code></td><td>Update runtime configuration</td></tr>
+              <tr><td><code>GET</code></td><td><code>/api/health</code></td><td>System health check</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Example Request</h3>
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">bash</span>
+              <button class="code-block-copy" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code><span class="comment"># Get active signals</span>
+curl http://localhost:8000/api/signals | python -m json.tool
+
+<span class="comment"># Response</span>
+{
+  <span class="string">"signals"</span>: [
+    {
+      <span class="string">"ticker"</span>: <span class="string">"BHP.AX"</span>,
+      <span class="string">"action"</span>: <span class="string">"BUY"</span>,
+      <span class="string">"confidence"</span>: <span class="variable">0.87</span>,
+      <span class="string">"quadrant"</span>: <span class="string">"Growth+Inflation"</span>,
+      <span class="string">"justification"</span>: <span class="string">"Strong commodity exposure in rising inflation regime"</span>
+    }
+  ],
+  <span class="string">"timestamp"</span>: <span class="string">"2026-04-08T09:30:00Z"</span>
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- WebSocket -->
+        <section id="websocket">
+          <h2>WebSocket API</h2>
+          <p>Real-time data streaming is available via WebSocket at <code>ws://localhost:8000/ws</code>.</p>
+
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">javascript</span>
+              <button class="code-block-copy" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code><span class="keyword">const</span> ws = <span class="keyword">new</span> <span class="function">WebSocket</span>(<span class="string">'ws://localhost:8000/ws'</span>);
+
+ws.<span class="function">onmessage</span> = (event) => {
+  <span class="keyword">const</span> data = JSON.<span class="function">parse</span>(event.data);
+  <span class="comment">// data.type: 'signal' | 'portfolio' | 'alert' | 'sentiment'</span>
+  console.<span class="function">log</span>(<span class="string">`[${data.type}]`</span>, data.payload);
+};</code></pre>
+          </div>
+
+          <h3>Message Types</h3>
+          <ul>
+            <li><code>signal</code> — New trade signal generated</li>
+            <li><code>portfolio</code> — Portfolio state update (every 30s)</li>
+            <li><code>alert</code> — System alerts (circuit breaker, risk warnings)</li>
+            <li><code>sentiment</code> — New sentiment score from FinBERT</li>
+          </ul>
+        </section>
+
+        <!-- Risk Management -->
+        <section id="risk-management">
+          <h2>Risk Management</h2>
+
+          <h3>Circuit Breaker</h3>
+          <p>The circuit breaker automatically halts trading when risk thresholds are breached:</p>
+          <ul>
+            <li><strong>Max Drawdown</strong> — Stops all new positions if portfolio drawdown exceeds the configured limit (default: 15%)</li>
+            <li><strong>Position Limits</strong> — No single position exceeds the configured percentage of total capital (default: 5%)</li>
+            <li><strong>Correlation Spike</strong> — Reduces exposure when cross-asset correlations spike above 0.8</li>
+            <li><strong>Volatility Regime</strong> — Automatically scales position sizes inversely with realized volatility</li>
+          </ul>
+
+          <div class="callout callout-warning">
+            <p><strong>Important:</strong> The circuit breaker should never be disabled in live trading. It is your last line of defense against catastrophic losses.</p>
+          </div>
+        </section>
+
+        <!-- Backtesting -->
+        <section id="backtesting">
+          <h2>Backtesting</h2>
+          <p>DALIOS uses walk-forward optimization to validate strategies against out-of-sample data.</p>
+
+          <h3>Walk-Forward Method</h3>
+          <ol>
+            <li><strong>Training Window:</strong> 12 months of historical data used to optimize parameters</li>
+            <li><strong>Test Window:</strong> 3 months of forward data to validate performance</li>
+            <li><strong>Rolling:</strong> Windows advance by the test period, creating multiple train/test cycles</li>
+            <li><strong>Aggregation:</strong> Out-of-sample results are combined for true performance assessment</li>
+          </ol>
+
+          <div class="code-block">
+            <div class="code-block-header">
+              <span class="code-block-lang">python</span>
+              <button class="code-block-copy" onclick="copyCode(this)">Copy</button>
+            </div>
+            <pre><code><span class="keyword">from</span> backtesting.walk_forward <span class="keyword">import</span> WalkForwardOptimizer
+
+optimizer = <span class="function">WalkForwardOptimizer</span>(
+    train_months=<span class="variable">12</span>,
+    test_months=<span class="variable">3</span>,
+    strategy=<span class="string">"all_weather"</span>
+)
+
+results = optimizer.<span class="function">run</span>(start_date=<span class="string">"2020-01-01"</span>)
+results.<span class="function">summary</span>()</code></pre>
+          </div>
+        </section>
+
+        <!-- Notifications -->
+        <section id="notifications">
+          <h2>Notifications</h2>
+
+          <h3>Discord</h3>
+          <p>Set your Discord webhook URL in the <code>.env</code> file or via the COMMS tab. Alerts include:</p>
+          <ul>
+            <li>New trade signals with confidence and quadrant</li>
+            <li>Position opened/closed events</li>
+            <li>Circuit breaker activations</li>
+            <li>Daily portfolio summary</li>
+          </ul>
+
+          <h3>Telegram</h3>
+          <p>Configure your Telegram bot token and chat ID. The bot supports interactive commands:</p>
+          <ul>
+            <li><code>/status</code> — Current portfolio status</li>
+            <li><code>/signals</code> — Active trade signals</li>
+            <li><code>/risk</code> — Risk metrics summary</li>
+            <li><code>/pause</code> — Temporarily pause trading</li>
+          </ul>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>DALIOS Autonomous Trading Framework &copy; 2026</p>
+          <p style="margin-top:0.25rem;font-size:0.7rem;">Built on Dalio's All Weather &amp; Economic Machine principles</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="https://github.com/defthrets/dalios-website" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

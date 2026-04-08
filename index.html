@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALIOS — Autonomous Trading Framework</title>
+  <meta name="description" content="Ray Dalio-inspired autonomous trading system for ASX equities and global commodities. Military-grade algorithmic trading powered by AI.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9670;</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <div class="logo-icon">D</div>
+      <h1>DALIOS</h1>
+      <span class="version">v2.0</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="docs.html">Documentation</a></li>
+      <li><a href="dashboard.html">Live Dashboard</a></li>
+      <li><a href="https://github.com/defthrets/dalios-website" target="_blank">GitHub</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="radial-glow"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag animate-in">
+          <span class="pulse"></span>
+          System Online — All Markets Active
+        </div>
+        <h1 class="animate-in animate-delay-1">
+          <span class="gradient">DALIOS</span><br>
+          Autonomous Trading Framework
+        </h1>
+        <p class="hero-desc animate-in animate-delay-2">
+          Military-grade algorithmic trading system built on Ray Dalio's All Weather
+          and Economic Machine principles. Autonomous signal generation, risk parity
+          optimization, and AI-powered market intelligence for ASX equities and global commodities.
+        </p>
+        <div class="hero-actions animate-in animate-delay-3">
+          <a href="docs.html#getting-started" class="btn btn-primary">
+            &#9654; Deploy Now
+          </a>
+          <a href="dashboard.html" class="btn btn-secondary">
+            &#9632; Live Dashboard
+          </a>
+        </div>
+        <div class="hero-stats animate-in animate-delay-4">
+          <div class="hero-stat">
+            <div class="value">7</div>
+            <div class="label">Command Modules</div>
+          </div>
+          <div class="hero-stat">
+            <div class="value">15+</div>
+            <div class="label">Asset Classes</div>
+          </div>
+          <div class="hero-stat">
+            <div class="value">24/7</div>
+            <div class="label">Autonomous Ops</div>
+          </div>
+          <div class="hero-stat">
+            <div class="value">&lt;50ms</div>
+            <div class="label">Signal Latency</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal Preview -->
+      <div class="terminal-preview animate-in animate-delay-4">
+        <div class="terminal-header">
+          <div style="display:flex;gap:6px;">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+          </div>
+          <span class="terminal-title">dalios@command-center:~</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div><span class="prompt">$</span> <span class="command">dalios init --market ASX --strategy all-weather</span></div>
+          <div class="output">[INIT] Loading Dalio Economic Machine model...</div>
+          <div class="output">[INIT] Calibrating risk parity engine (Riskfolio-Lib)...</div>
+          <div class="output">[INIT] FinBERT sentiment pipeline ready</div>
+          <div class="output">[INIT] 15 uncorrelated assets loaded into Holy Grail matrix</div>
+          <div><span class="accent">[READY]</span> <span class="output">DALIOS framework initialized. All systems nominal.</span></div>
+          <br>
+          <div><span class="prompt">$</span> <span class="command">dalios scan --mode aggressive</span></div>
+          <div class="output">[SCAN] Analyzing 247 instruments across 4 quadrants...</div>
+          <div><span class="accent">[SIGNAL]</span> <span class="output">BUY BHP.AX — Confidence: 87% — Dalio Quadrant: Growth+Inflation</span></div>
+          <div><span class="accent">[SIGNAL]</span> <span class="output">SHORT WBC.AX — Confidence: 72% — Circuit breaker: CLEAR</span></div>
+          <div><span class="prompt">$</span> <span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// System Modules</span>
+        <h2>7 Integrated Command Modules</h2>
+        <p>Each module operates autonomously while sharing intelligence across the framework for unified market dominance.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="card animate-in">
+          <span class="feature-tag">Module 01</span>
+          <div class="card-icon">&#9881;</div>
+          <h3>Command Center</h3>
+          <p>Real-time equity curve tracking, Dalio economic quadrant grid, portfolio vitals, and a live alert feed. Your mission control for all trading operations.</p>
+        </div>
+
+        <div class="card animate-in animate-delay-1">
+          <span class="feature-tag">Module 02</span>
+          <div class="card-icon">&#9889;</div>
+          <h3>Signal Ops</h3>
+          <p>Filtered trade signals with BUY, SELL, SHORT, and LONG recommendations. Each signal includes confidence scores and Dalio-principle justification.</p>
+        </div>
+
+        <div class="card animate-in animate-delay-2">
+          <span class="feature-tag">Module 03</span>
+          <div class="card-icon">&#128225;</div>
+          <h3>Intel Center</h3>
+          <p>FinBERT-powered news scanner with real-time sentiment analysis. Conflict risk meter and sentiment distribution across all monitored assets.</p>
+        </div>
+
+        <div class="card animate-in animate-delay-3">
+          <span class="feature-tag">Module 04</span>
+          <div class="card-icon">&#9830;</div>
+          <h3>Holy Grail</h3>
+          <p>Correlation heatmap with 15-asset diversification meter. Risk-parity weight optimization using Riskfolio-Lib for the ultimate uncorrelated portfolio.</p>
+        </div>
+
+        <div class="card animate-in animate-delay-1">
+          <span class="feature-tag">Module 05</span>
+          <div class="card-icon">&#9888;</div>
+          <h3>Risk Matrix</h3>
+          <p>Circuit breaker system, P&amp;L tracking, positions table with live Sharpe, Sortino, and maximum drawdown metrics. Never exceed your risk tolerance.</p>
+        </div>
+
+        <div class="card animate-in animate-delay-2">
+          <span class="feature-tag">Module 06</span>
+          <div class="card-icon">&#128202;</div>
+          <h3>Backtest Lab</h3>
+          <p>Walk-forward optimization with 12-month training and 3-month test windows. Period-by-period breakdown to validate every strategy before deployment.</p>
+        </div>
+
+        <div class="card animate-in animate-delay-3">
+          <span class="feature-tag">Module 07</span>
+          <div class="card-icon">&#128274;</div>
+          <h3>Comms</h3>
+          <p>Discord webhook and Telegram bot integration for real-time notifications. Configure API keys and alert preferences from a single secure interface.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value" data-count="247">247</div>
+          <div class="stat-label">Instruments Scanned</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" data-count="15">15</div>
+          <div class="stat-label">Uncorrelated Assets</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">99.7%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">4</div>
+          <div class="stat-label">Dalio Quadrants</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How It Works -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// Operational Architecture</span>
+        <h2>How DALIOS Operates</h2>
+        <p>A continuous intelligence loop from data ingestion to autonomous execution.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 1.25rem;font-size:1.5rem;">1</div>
+          <h3>Ingest &amp; Analyze</h3>
+          <p>Real-time market data, news sentiment via FinBERT, and macro indicators are continuously ingested and classified into Dalio's economic quadrants.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 1.25rem;font-size:1.5rem;">2</div>
+          <h3>Optimize &amp; Signal</h3>
+          <p>Risk parity engine optimizes portfolio weights. The AI agent generates BUY/SELL/SHORT signals with confidence scores and circuit-breaker validation.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon" style="margin:0 auto 1.25rem;font-size:1.5rem;">3</div>
+          <h3>Execute &amp; Report</h3>
+          <p>Validated signals are executed autonomously. Real-time P&amp;L, risk metrics, and walk-forward results are pushed to your dashboard and notification channels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="tech-stack" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// Technology Stack</span>
+        <h2>Built With Precision</h2>
+        <p>Battle-tested technologies chosen for reliability, speed, and scalability.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-icon">&#128013;</div>
+          <div>
+            <div class="tech-name">Python</div>
+            <div class="tech-desc">Core engine & AI</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">&#9889;</div>
+          <div>
+            <div class="tech-name">FastAPI</div>
+            <div class="tech-desc">REST + WebSocket API</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">&#129302;</div>
+          <div>
+            <div class="tech-name">FinBERT</div>
+            <div class="tech-desc">NLP sentiment analysis</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">&#128200;</div>
+          <div>
+            <div class="tech-name">Riskfolio-Lib</div>
+            <div class="tech-desc">Risk parity optimization</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">&#128202;</div>
+          <div>
+            <div class="tech-name">Chart.js</div>
+            <div class="tech-desc">Real-time visualization</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">&#128268;</div>
+          <div>
+            <div class="tech-name">WebSocket</div>
+            <div class="tech-desc">Live data streaming</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">&#128176;</div>
+          <div>
+            <div class="tech-name">yfinance</div>
+            <div class="tech-desc">Market data feeds</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">&#128276;</div>
+          <div>
+            <div class="tech-name">Discord + Telegram</div>
+            <div class="tech-desc">Alert notifications</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section id="principles">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// Core Principles</span>
+        <h2>Dalio's Economic Machine</h2>
+        <p>Every decision is grounded in Ray Dalio's proven macro-economic framework.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="color:var(--green);">&#9650; Growth Rising + Inflation Rising</h3>
+          <p>Overweight commodities, TIPS, emerging market equities. The economy is heating up — ride the momentum while hedging inflation risk.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:var(--blue);">&#9650; Growth Rising + Inflation Falling</h3>
+          <p>Overweight equities, corporate bonds. The goldilocks environment — lean into risk assets as conditions favor broad expansion.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:var(--yellow);">&#9660; Growth Falling + Inflation Rising</h3>
+          <p>Overweight gold, commodities, inflation-linked bonds. Stagflation territory — protect capital and hedge against purchasing power erosion.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:var(--red);">&#9660; Growth Falling + Inflation Falling</h3>
+          <p>Overweight nominal bonds, defensive equities. Deflationary risk — prioritize capital preservation and safe-haven positions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="section-label">// Ready to Deploy</span>
+      <h2>Take Command of Your Portfolio</h2>
+      <p>Deploy DALIOS in minutes. Full autonomous trading with military-grade risk management.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;">
+        <a href="docs.html#getting-started" class="btn btn-primary">&#9654; Read the Docs</a>
+        <a href="dashboard.html" class="btn btn-secondary">&#9632; Try Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p>DALIOS Autonomous Trading Framework &copy; 2026</p>
+          <p style="margin-top:0.25rem;font-size:0.7rem;">Built on Dalio's All Weather &amp; Economic Machine principles</p>
+        </div>
+        <div class="footer-links">
+          <a href="docs.html">Docs</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="https://github.com/defthrets/dalios-website" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
