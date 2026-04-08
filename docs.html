@@ -532,8 +532,26 @@ results.<span class="function">summary</span>()</code></pre>
           <a href="https://github.com/defthrets/dalios-website" target="_blank">GitHub</a>
         </div>
       </div>
+      <div class="footer-legal">
+        <a href="#" onclick="openLegalModal('privacy');return false">Privacy Policy</a>
+        <span class="footer-sep">|</span>
+        <a href="#" onclick="openLegalModal('terms');return false">Terms &amp; Conditions</a>
+        <span class="footer-sep">|</span>
+        <a href="#" onclick="openLegalModal('transparency');return false">Transparency Report</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 DaliosATF. All rights reserved.</div>
     </div>
   </footer>
+
+  <div class="legal-modal-overlay hidden" id="legalModalOverlay" onclick="if(event.target===this)closeLegalModal()">
+    <div class="legal-modal">
+      <div class="legal-modal-header">
+        <span class="legal-modal-title" id="legalModalTitle">Privacy Policy</span>
+        <button class="legal-modal-close" onclick="closeLegalModal()">&times;</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
   <script src="js/docs.js"></script>
