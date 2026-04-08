@@ -343,11 +343,35 @@
           <span class="download-meta">v2.0 &middot; Kivy + WKWebView</span>
         </div>
       </div>
-      <div class="card" style="margin-top:2rem;text-align:center;padding:2rem;">
-        <div class="card-icon">&#9881;</div>
-        <h3>Automated CI/CD Builds</h3>
-        <p>Push a version tag and GitHub Actions builds all 5 platforms in parallel, then creates a GitHub Release with download links. No manual building required.</p>
-        <code style="display:inline-block;margin-top:1rem;padding:0.5rem 1rem;background:var(--bg);border-radius:4px;font-size:0.85rem;">git tag v1.0.0 && git push --tags</code>
+      <div class="card" style="margin-top:2rem;padding:2rem;">
+        <div style="text-align:center;margin-bottom:1.5rem;">
+          <div class="card-icon">&#9654;</div>
+          <h3>Install From Source</h3>
+          <p>Clone the repo and build DALIOS natively on your platform.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+          <div>
+            <h4 style="color:var(--accent);font-family:var(--font-mono);font-size:0.8rem;margin-bottom:0.5rem;">WINDOWS (PowerShell)</h4>
+            <pre style="background:var(--bg);padding:1rem;border-radius:6px;font-size:0.8rem;overflow-x:auto;"><code>git clone https://github.com/defthrets/dalio-trading-system.git
+cd dalio-trading-system
+pip install -r requirements.txt
+.\build.bat</code></pre>
+          </div>
+          <div>
+            <h4 style="color:var(--accent);font-family:var(--font-mono);font-size:0.8rem;margin-bottom:0.5rem;">LINUX (Terminal)</h4>
+            <pre style="background:var(--bg);padding:1rem;border-radius:6px;font-size:0.8rem;overflow-x:auto;"><code>git clone https://github.com/defthrets/dalio-trading-system.git
+cd dalio-trading-system
+pip install -r requirements.txt
+chmod +x build.sh && ./build.sh</code></pre>
+          </div>
+          <div>
+            <h4 style="color:var(--accent);font-family:var(--font-mono);font-size:0.8rem;margin-bottom:0.5rem;">macOS (Terminal)</h4>
+            <pre style="background:var(--bg);padding:1rem;border-radius:6px;font-size:0.8rem;overflow-x:auto;"><code>git clone https://github.com/defthrets/dalio-trading-system.git
+cd dalio-trading-system
+pip install -r requirements.txt
+chmod +x build-mac.sh && ./build-mac.sh</code></pre>
+          </div>
+        </div>
       </div>
     </div>
   </section>
