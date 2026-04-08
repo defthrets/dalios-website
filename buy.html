@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DALIOS — Purchase</title>
+  <meta name="description" content="Purchase DALIOS Autonomous Trading Framework. $29 one-time payment, lifetime updates.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9670;</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-brand">
+      <span class="cash3d" title="DALIOS"><div class="cash3d-scene"><div class="cash3d-rotator"><div class="cash3d-face cash3d-front"><div class="bill-face"><div class="bill-border"></div><div class="bill-oval"></div><span class="bill-dollar">$</span><span class="bill-100">100</span></div></div><div class="cash3d-face cash3d-back"><div class="bill-face"><div class="bill-border"></div><div class="bill-oval"></div><span class="bill-dollar">$</span><span class="bill-100">100</span></div></div><div class="cash3d-face cash3d-right"><div class="stack-edge"></div></div><div class="cash3d-face cash3d-left"><div class="stack-edge"></div></div><div class="cash3d-face cash3d-top"><div class="stack-edge-h"></div></div><div class="cash3d-face cash3d-bottom"><div class="stack-edge-h"></div></div><div class="band-face band-front"></div><div class="band-face band-back"></div><div class="band-face band-top"></div><div class="band-face band-bottom"></div></div></div></span>
+      <h1>DALIOS</h1>
+      <span class="version">v2.0</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="docs.html">Documentation</a></li>
+      <li><a href="preview.html">Screenshots</a></li>
+      <li><a href="buy.html" class="active">Buy</a></li>
+      <li><a href="https://github.com/defthrets/dalios-website" target="_blank">GitHub</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+
+  <!-- Purchase Section -->
+  <section style="padding:8rem 0 4rem;">
+    <div class="container" style="max-width:900px;">
+
+      <!-- Product Summary -->
+      <div style="text-align:center;margin-bottom:3rem;">
+        <img src="assets/rex/rex-rich.png" alt="Rex" class="rex-mascot" style="max-width:160px;margin:0 auto 1rem;">
+        <h1 style="font-family:var(--font-display);font-size:2rem;color:var(--accent);margin-bottom:0.5rem;">Get DALIOS</h1>
+        <p style="color:var(--text-secondary);max-width:500px;margin:0 auto;">One payment. Lifetime access. All future updates included. No subscriptions, no recurring charges, no BS.</p>
+      </div>
+
+      <!-- Purchase Card -->
+      <div class="card" style="padding:0;overflow:hidden;border:1px solid var(--border);max-width:700px;margin:0 auto;">
+
+        <!-- What You Get -->
+        <div style="padding:2rem;border-bottom:1px solid var(--border);">
+          <h2 style="font-family:var(--font-display);font-size:0.85rem;letter-spacing:1px;color:var(--accent);margin-bottom:1.5rem;">WHAT YOU GET</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> Autonomous AI trading bot</div>
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> 300+ ASX & commodity tickers</div>
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> 16 broker integrations</div>
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> 11 command modules</div>
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> Paper & live trading</div>
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> Risk parity optimization</div>
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> All future updates free</div>
+            <div class="buy-feature"><span class="buy-check">&#10003;</span> Windows, macOS & Linux</div>
+          </div>
+        </div>
+
+        <!-- Platform Selection -->
+        <div style="padding:2rem;border-bottom:1px solid var(--border);">
+          <h2 style="font-family:var(--font-display);font-size:0.85rem;letter-spacing:1px;color:var(--accent);margin-bottom:1rem;">SELECT PLATFORM</h2>
+          <div class="platform-selector">
+            <label class="platform-option selected" data-platform="windows" data-url="https://github.com/defthrets/dalio-trading-system/releases/download/v2.0.0/DALIOS-windows.zip">
+              <input type="radio" name="platform" value="windows" checked>
+              <span class="platform-icon">&#128187;</span>
+              <span class="platform-name">Windows</span>
+              <span class="platform-desc">10/11 (64-bit) &middot; 54 MB</span>
+            </label>
+            <label class="platform-option" data-platform="macos" data-url="https://github.com/defthrets/dalio-trading-system/releases/download/v2.0.0/DALIOS-macos.zip">
+              <input type="radio" name="platform" value="macos">
+              <span class="platform-icon">&#63743;</span>
+              <span class="platform-name">macOS</span>
+              <span class="platform-desc">12+ (Intel & Apple Silicon) &middot; 129 MB</span>
+            </label>
+            <label class="platform-option" data-platform="linux" data-url="https://github.com/defthrets/dalio-trading-system/releases/download/v2.0.0/DALIOS-linux.tar.gz">
+              <input type="radio" name="platform" value="linux">
+              <span class="platform-icon">&#128039;</span>
+              <span class="platform-name">Linux</span>
+              <span class="platform-desc">Ubuntu 20.04+ / Debian / Fedora &middot; 91 MB</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Checkout -->
+        <div style="padding:2rem;text-align:center;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+            <h2 style="font-family:var(--font-display);font-size:0.85rem;letter-spacing:1px;color:var(--accent);margin:0;">CHECKOUT</h2>
+            <div style="text-align:right;">
+              <span style="font-family:var(--font-display);font-size:1.8rem;font-weight:900;color:var(--text-primary);">$29</span>
+              <span style="font-size:0.75rem;color:var(--text-muted);display:block;">AUD &middot; one-time</span>
+            </div>
+          </div>
+
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.5rem;">Secure checkout powered by LemonSqueezy. Pay with card, Apple Pay, or Google Pay.</p>
+
+          <!-- LemonSqueezy checkout button — replace YOUR_PRODUCT_URL with your actual LemonSqueezy product checkout URL -->
+          <a href="https://YOUR_STORE.lemonsqueezy.com/checkout/buy/YOUR_PRODUCT_ID" class="btn btn-primary lemonsqueezy-button" style="width:100%;padding:1rem;font-size:1rem;display:inline-block;text-decoration:none;">
+            Pay $29 AUD &mdash; Get DALIOS
+          </a>
+
+          <div style="margin-top:1rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-size:0.75rem;color:var(--text-muted);">
+            <span>&#128274;</span> Secure payment &middot; SSL encrypted &middot; GST included
+          </div>
+
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-muted);">
+            After payment, your download link will be delivered instantly via email.<br>
+            Choose your platform above — you'll receive the correct version automatically.
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div style="display:flex;justify-content:center;gap:2rem;margin-top:2rem;flex-wrap:wrap;">
+        <div style="text-align:center;font-size:0.75rem;color:var(--text-muted);">
+          <div style="font-size:1.5rem;margin-bottom:0.25rem;">&#128274;</div>
+          Secure Payment
+        </div>
+        <div style="text-align:center;font-size:0.75rem;color:var(--text-muted);">
+          <div style="font-size:1.5rem;margin-bottom:0.25rem;">&#9851;</div>
+          Lifetime Updates
+        </div>
+        <div style="text-align:center;font-size:0.75rem;color:var(--text-muted);">
+          <div style="font-size:1.5rem;margin-bottom:0.25rem;">&#128187;</div>
+          Instant Download
+        </div>
+        <div style="text-align:center;font-size:0.75rem;color:var(--text-muted);">
+          <div style="font-size:1.5rem;margin-bottom:0.25rem;">&#128231;</div>
+          Email Support
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-legal">
+        <a href="#" onclick="openLegalModal('privacy');return false">Privacy Policy</a>
+        <span class="footer-sep">|</span>
+        <a href="#" onclick="openLegalModal('terms');return false">Terms &amp; Conditions</a>
+        <span class="footer-sep">|</span>
+        <a href="#" onclick="openLegalModal('transparency');return false">Transparency Report</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 DaliosATF. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <div class="legal-modal-overlay hidden" id="legalModalOverlay" onclick="if(event.target===this)closeLegalModal()">
+    <div class="legal-modal">
+      <div class="legal-modal-header">
+        <span class="legal-modal-title" id="legalModalTitle">Privacy Policy</span>
+        <button class="legal-modal-close" onclick="closeLegalModal()">&times;</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
+
+  <!-- LemonSqueezy overlay checkout script -->
+  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Platform selector
+    document.querySelectorAll('.platform-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('.platform-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        opt.querySelector('input').checked = true;
+      });
+    });
+  </script>
+</body>
+</html>
