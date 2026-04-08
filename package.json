@@ -1,9 +1,8 @@
 {
   "name": "dalios-website",
-  "version": "1.0.0",
-  "description": "Website for the DALIOS Automated Trading Framework",
+  "version": "2.0.0",
+  "description": "Website for the DALIOS Autonomous Trading Framework",
   "scripts": {
-    "dev": "npx live-server --port=3000",
-    "build": "echo 'Static site - no build needed'"
+    "dev": "npx live-server --port=3000"
   }
 }
