@@ -109,6 +109,17 @@
         </div>
       </div>
 
+      <!-- Voucher Code -->
+      <div class="card" style="padding:2rem;border:1px solid var(--border);max-width:700px;margin:2rem auto 0;text-align:center;">
+        <h2 style="font-family:var(--font-display);font-size:0.85rem;letter-spacing:1px;color:var(--accent);margin-bottom:1rem;">HAVE A VOUCHER CODE?</h2>
+        <p style="color:var(--text-secondary);font-size:0.8rem;margin-bottom:1rem;">Enter your code below to get DALIOS for free.</p>
+        <div style="display:flex;gap:0.75rem;max-width:400px;margin:0 auto;">
+          <input type="text" id="voucherCode" placeholder="Enter code" style="flex:1;padding:0.75rem 1rem;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-family:var(--font-mono);font-size:0.9rem;letter-spacing:1px;outline:none;text-transform:uppercase;" spellcheck="false">
+          <button class="btn btn-primary" style="padding:0.75rem 1.5rem;font-size:0.85rem;white-space:nowrap;" onclick="redeemVoucher()">Redeem</button>
+        </div>
+        <div id="voucherResult" style="display:none;margin-top:1rem;padding:0.75rem;border-radius:8px;font-size:0.8rem;"></div>
+      </div>
+
       <!-- Trust badges -->
       <div style="display:flex;justify-content:center;gap:2rem;margin-top:2rem;flex-wrap:wrap;">
         <div style="text-align:center;font-size:0.75rem;color:var(--text-muted);">
@@ -168,6 +179,49 @@
         opt.querySelector('input').checked = true;
       });
     });
+
+    // Voucher code redemption
+    const VALID_VOUCHERS = ['SPITMUX'];
+
+    document.getElementById('voucherCode')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') redeemVoucher();
+    });
+
+    function redeemVoucher() {
+      const input = document.getElementById('voucherCode');
+      const result = document.getElementById('voucherResult');
+      const code = input.value.trim().toUpperCase();
+
+      if (!code) {
+        result.style.display = 'block';
+        result.style.background = 'rgba(239,68,68,0.1)';
+        result.style.border = '1px solid rgba(239,68,68,0.3)';
+        result.style.color = 'var(--red)';
+        result.textContent = 'Please enter a voucher code.';
+        return;
+      }
+
+      if (VALID_VOUCHERS.includes(code)) {
+        result.style.display = 'block';
+        result.style.background = 'rgba(34,197,94,0.1)';
+        result.style.border = '1px solid rgba(34,197,94,0.3)';
+        result.style.color = 'var(--green)';
+        result.innerHTML = 'Voucher accepted! Your download will start shortly.';
+
+        // Trigger download for selected platform
+        const platform = document.querySelector('.platform-option.selected');
+        const url = platform?.dataset.url;
+        if (url) {
+          setTimeout(() => { window.location.href = url; }, 1500);
+        }
+      } else {
+        result.style.display = 'block';
+        result.style.background = 'rgba(239,68,68,0.1)';
+        result.style.border = '1px solid rgba(239,68,68,0.3)';
+        result.style.color = 'var(--red)';
+        result.textContent = 'Invalid voucher code.';
+      }
+    }
   </script>
 </body>
 </html>
