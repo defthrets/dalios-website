@@ -48,8 +48,8 @@
         </h1>
         <p class="hero-desc animate-in animate-delay-2">
           Military-grade algorithmic trading powered by Ray Dalio's All Weather
-          and Economic Machine principles. AI-driven signal generation, risk parity
-          optimization, and real-time market intelligence for ASX equities and global commodities.
+          and Economic Machine principles. Autonomous AI agent, signal generation across 300+ tickers,
+          risk parity optimization, and real-time market intelligence. Runs on all 5 platforms.
         </p>
         <div class="hero-actions animate-in animate-delay-3">
           <a href="#download" class="btn btn-primary">
@@ -65,11 +65,11 @@
             <div class="label">Command Modules</div>
           </div>
           <div class="hero-stat">
-            <div class="value">71+</div>
-            <div class="label">Tracked Assets</div>
+            <div class="value">300+</div>
+            <div class="label">Tracked Tickers</div>
           </div>
           <div class="hero-stat">
-            <div class="value">15+</div>
+            <div class="value">16</div>
             <div class="label">Broker Integrations</div>
           </div>
           <div class="hero-stat">
@@ -131,6 +131,18 @@
     </div>
   </section>
 
+  <!-- Meet Rex -->
+  <section style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 0;">
+    <div class="container" style="display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;">
+      <img src="assets/rex/rex-welcome.png" alt="Rex the trading gecko" class="rex-mascot" style="max-width:160px;">
+      <div style="max-width:500px;">
+        <span class="section-label">// Your Trading Assistant</span>
+        <h2 style="margin:0.5rem 0;">Meet Rex</h2>
+        <p>Rex is your blue-tongue lizard trading assistant. He guides you through the system with an interactive tutorial, celebrates your wins, and keeps you company during market hours. Built into every module.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Features Section -->
   <section id="features">
     <div class="container">
@@ -159,13 +171,13 @@
           <span class="feature-tag">Module 03</span>
           <div class="card-icon">&#9889;</div>
           <h3>Signal Ops</h3>
-          <p>AI-generated BUY/SELL signals ranked by confidence. Each card shows entry price, stop loss, take profit, risk/reward ratio, and Dalio justification.</p>
+          <p>AI-generated BUY/SELL signals across 300+ tickers ranked by confidence. Each card shows entry price, stop loss, take profit, risk/reward ratio, and Dalio justification.</p>
         </div>
         <div class="card animate-in animate-delay-3">
           <span class="feature-tag">Module 04</span>
           <div class="card-icon">&#128225;</div>
           <h3>Intel Center</h3>
-          <p>FinBERT-powered news scanner across 50+ sources. Geopolitical risk monitor, sentiment distribution, and news quadrant signal classification.</p>
+          <p>Live RSS news from 12+ financial feeds with FinBERT sentiment scoring. Geopolitical risk monitor, sentiment distribution, and news quadrant signal classification.</p>
         </div>
         <div class="card animate-in">
           <span class="feature-tag">Module 05</span>
@@ -207,7 +219,7 @@
           <span class="feature-tag">Module 11</span>
           <div class="card-icon">&#128274;</div>
           <h3>Settings</h3>
-          <p>15+ broker connections (IG, Interactive Brokers, Saxo, CMC, and more). Risk management config, UI display options, and guided tour.</p>
+          <p>16 broker connections (IG, Interactive Brokers, Saxo, CMC, and more). Risk management config, UI display options, and Rex-guided interactive tutorial.</p>
         </div>
       </div>
     </div>
@@ -218,20 +230,20 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-value">71+</div>
-          <div class="stat-label">ASX Equities</div>
+          <div class="stat-value">300+</div>
+          <div class="stat-label">Tracked Tickers</div>
         </div>
         <div class="stat-item">
-          <div class="stat-value">66+</div>
-          <div class="stat-label">Commodities</div>
+          <div class="stat-value">5</div>
+          <div class="stat-label">Platforms</div>
         </div>
         <div class="stat-item">
-          <div class="stat-value">15+</div>
+          <div class="stat-value">16</div>
           <div class="stat-label">Broker Integrations</div>
         </div>
         <div class="stat-item">
-          <div class="stat-value">50+</div>
-          <div class="stat-label">News Sources</div>
+          <div class="stat-value">12+</div>
+          <div class="stat-label">News Feeds</div>
         </div>
       </div>
     </div>
@@ -242,7 +254,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">// Broker Connections</span>
-        <h2>15+ Supported Brokers</h2>
+        <h2>16 Supported Brokers</h2>
         <p>Connect your existing broker account and start trading in minutes.</p>
       </div>
       <div class="broker-grid">
@@ -292,7 +304,7 @@
         <img src="assets/rex/rex-welcome.png" alt="Rex welcomes you" class="rex-mascot" style="max-width:140px;margin:0 auto 1rem;">
         <span class="section-label">// Download</span>
         <h2>Get DALIOS</h2>
-        <p>Available for Windows, Mac, and Linux. Mobile apps coming soon.</p>
+        <p>Available for all platforms. Auto-built via GitHub Actions on every release.</p>
       </div>
       <div class="download-grid">
         <div class="download-card">
@@ -316,20 +328,26 @@
           <a href="#" class="btn btn-primary btn-sm">&#11015; Download .AppImage</a>
           <span class="download-meta">v2.0 &middot; ~80 MB</span>
         </div>
-        <div class="download-card coming-soon">
+        <div class="download-card">
           <div class="download-icon">&#128241;</div>
           <h3>Android</h3>
-          <p>Android 12+</p>
-          <span class="btn btn-secondary btn-sm" style="opacity:0.5;cursor:default;">Coming Soon</span>
-          <span class="download-meta">In development</span>
+          <p>Android 12+ (APK)</p>
+          <a href="#" class="btn btn-primary btn-sm">&#11015; Download .apk</a>
+          <span class="download-meta">v2.0 &middot; Kivy + FastAPI</span>
         </div>
-        <div class="download-card coming-soon">
+        <div class="download-card">
           <div class="download-icon">&#128241;</div>
           <h3>iOS</h3>
           <p>iPhone &amp; iPad</p>
-          <span class="btn btn-secondary btn-sm" style="opacity:0.5;cursor:default;">Coming Soon</span>
-          <span class="download-meta">In development</span>
+          <a href="#" class="btn btn-primary btn-sm">&#11015; Xcode Project</a>
+          <span class="download-meta">v2.0 &middot; Kivy + WKWebView</span>
         </div>
+      </div>
+      <div class="card" style="margin-top:2rem;text-align:center;padding:2rem;">
+        <div class="card-icon">&#9881;</div>
+        <h3>Automated CI/CD Builds</h3>
+        <p>Push a version tag and GitHub Actions builds all 5 platforms in parallel, then creates a GitHub Release with download links. No manual building required.</p>
+        <code style="display:inline-block;margin-top:1rem;padding:0.5rem 1rem;background:var(--bg);border-radius:4px;font-size:0.85rem;">git tag v1.0.0 && git push --tags</code>
       </div>
     </div>
   </section>
