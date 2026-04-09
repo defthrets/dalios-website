@@ -105,9 +105,9 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(12, 10, 9, 0.96);
+  background: linear-gradient(90deg, rgba(20, 18, 16, 0.97), rgba(45, 40, 36, 0.97), rgba(60, 55, 50, 0.97));
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(249, 115, 22, 0.08);
+  border-bottom: none;
   box-shadow: 0 0 40px rgba(249, 115, 22, 0.03);
   overflow: hidden;
   padding: 0 2rem;
@@ -123,7 +123,7 @@ code, pre {
   bottom: 0;
   left: -100%;
   width: 60%;
-  height: 1px;
+  height: 3px;
   background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.4), transparent);
   animation: nav-glow-sweep 6s ease-in-out infinite;
 }
