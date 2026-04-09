@@ -105,7 +105,7 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(180deg, #524a44, #3a3330, #1c1917);
+  background: linear-gradient(180deg, #353030, #2a2524, #1c1917);
   backdrop-filter: blur(20px);
   border-bottom: none;
   box-shadow: 0 0 40px rgba(249, 115, 22, 0.03);
@@ -125,7 +125,7 @@ code, pre {
   width: 60%;
   height: 3px;
   background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.4), transparent);
-  animation: nav-glow-sweep 6s ease-in-out infinite;
+  animation: nav-glow-sweep 3s ease-in-out infinite;
 }
 
 @keyframes nav-glow-sweep {
