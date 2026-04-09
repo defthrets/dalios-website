@@ -364,7 +364,7 @@ code, pre {
 .cash3d-hero .band-back::after { font-size: 11px; }
 
 /* Heavy glitch effect on hero cash */
-.cash3d-glitch .cash3d-scene {
+.cash3d-glitch {
   animation: cashGlitchMove 3s ease-in-out infinite, sceneFlicker 3s ease infinite;
 }
 
