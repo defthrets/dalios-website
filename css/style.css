@@ -1603,6 +1603,12 @@ section {
   gap: 1rem;
 }
 
+a.broker-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .broker-item {
   display: flex;
   align-items: center;
