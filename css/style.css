@@ -733,7 +733,7 @@ section {
 }
 
 .hero h1 .gradient {
-  background: linear-gradient(135deg, var(--accent), #fb923c, var(--yellow));
+  background: linear-gradient(135deg, #f97316, #fb923c, #f59e0b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
