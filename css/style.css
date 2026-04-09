@@ -105,14 +105,22 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(12, 10, 9, 0.92);
+  background: linear-gradient(90deg, rgba(28, 25, 23, 0.95), rgba(41, 37, 36, 0.95), rgba(28, 25, 23, 0.95));
+  background-size: 200% 100%;
+  animation: nav-shimmer 8s ease-in-out infinite;
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(249, 115, 22, 0.15);
+  box-shadow: 0 1px 20px rgba(249, 115, 22, 0.05);
   padding: 0 2rem;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@keyframes nav-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .nav-brand {
