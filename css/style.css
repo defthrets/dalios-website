@@ -389,7 +389,7 @@ code, pre {
 .cash3d-hero .band-top { transform: rotateX(90deg) translateZ(18px); }
 .cash3d-hero .band-bottom { transform: rotateX(-90deg) translateZ(18px); }
 .cash3d-hero .band-front::after,
-.cash3d-hero .band-back::after { font-size: 10px; }
+.cash3d-hero .band-back::after { display: none; }
 
 /* Heavy glitch effect on hero cash — separate div so it doesn't fight scale/spin */
 .hero-cash-glitch {
