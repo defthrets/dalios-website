@@ -230,6 +230,38 @@ function closeLegalModal() {
   document.getElementById('legalModalOverlay').classList.add('hidden');
 }
 
+// ── Demo Radar Telemetry ──
+document.addEventListener('DOMContentLoaded', () => {
+  const telem = document.getElementById('demoRadarTelem');
+  if (!telem) return;
+
+  const lines = [
+    'SYS.INIT 0x4F2A OK', 'MKT.LINK CONNECTED',
+    'SCAN ASX300 — 71 ASSETS', 'RSI CALC BHP.AX 62.4',
+    'SIG BUY FMG.AX 0.87', 'RISK CHK NOMINAL',
+    'QDR Q2 DETECTED', 'NET.PING 12ms',
+    'ORD FILL 150 @ 45.20', 'CIRC.BRK ARMED',
+    'SCAN FULL ASX 1928', 'HASH 0xA3F1 VERIFIED',
+    'SIG SELL WDS.AX 0.78', 'VaR -2.1% OK',
+    'FEED RSS 12 ARTICLES', 'SENT BULLISH +0.34',
+    'ALLOC REBAL 6 POS', 'LOOP CYCLE 42 DONE',
+    'GOLD $2412 +0.8%', 'LI $14200 +1.2%',
+  ];
+  let idx = 0;
+
+  function addTelem() {
+    const div = document.createElement('div');
+    const cls = Math.random() < 0.15 ? ' tl-red' : Math.random() < 0.3 ? ' tl-green' : '';
+    div.className = 'demo-telem-line' + cls;
+    div.textContent = '> ' + lines[idx % lines.length];
+    telem.appendChild(div);
+    if (telem.children.length > 12) telem.removeChild(telem.firstChild);
+    idx++;
+    setTimeout(addTelem, 800 + Math.random() * 1500);
+  }
+  addTelem();
+});
+
 // ── Demo Ops Log ──
 document.addEventListener('DOMContentLoaded', () => {
   const log = document.getElementById('demoOpsLog');
