@@ -365,7 +365,7 @@ code, pre {
   transform: rotateX(-90deg) translateZ(18px);
 }
 .cash3d-hero .bill-oval { width: 16px; height: 16px; }
-.cash3d-hero .bill-dollar { font-size: 16px; }
+.cash3d-hero .bill-dollar { display: none; }
 .cash3d-hero .bill-100 { font-size: 7px; }
 /* Band wrapping around the stack — sits just outside the box faces */
 .cash3d-hero .band-face {
