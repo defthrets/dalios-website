@@ -384,9 +384,10 @@ code, pre {
 .cash3d-hero .band-bottom {
   width: 14px; height: 14px;
   left: 23px;
+  top: 11px;
 }
-.cash3d-hero .band-top { top: -7px; transform: rotateX(90deg) translateZ(18px); }
-.cash3d-hero .band-bottom { top: 29px; transform: rotateX(-90deg) translateZ(18px); }
+.cash3d-hero .band-top { transform: rotateX(90deg) translateZ(18px); }
+.cash3d-hero .band-bottom { transform: rotateX(-90deg) translateZ(18px); }
 .cash3d-hero .band-front::after,
 .cash3d-hero .band-back::after { font-size: 10px; }
 
