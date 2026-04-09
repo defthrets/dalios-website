@@ -21,7 +21,7 @@
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="docs.html">Documentation</a></li>
       <li><a href="preview.html">Screenshots</a></li>
-      <li><a href="buy.html">Buy</a></li>
+      <li><a href="https://github.com/defthrets/dalio-trading-system/releases/latest">Download</a></li>
       <li><a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank">Discord</a></li>
     </ul>
     <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
@@ -40,7 +40,20 @@
         </div>
         <div class="hero-tag animate-in">
           <span class="pulse"></span>
-          System Online — Autonomous Trading Activated
+          <span class="hero-tag-text">
+            <span class="tag-prefix">[SYS]</span>
+            <span class="tag-typing" id="heroTagTyping"></span>
+            <span class="tag-cursor">&#9608;</span>
+          </span>
+        </div>
+        <div class="hero-status-bar animate-in">
+          <span class="hsb-item"><span class="hsb-dot hsb-dot--green"></span>CORE ONLINE</span>
+          <span class="hsb-sep">|</span>
+          <span class="hsb-item"><span class="hsb-dot hsb-dot--green"></span>SCANNERS ACTIVE</span>
+          <span class="hsb-sep">|</span>
+          <span class="hsb-item"><span class="hsb-dot hsb-dot--amber"></span>SIGNAL ENGINE ARMED</span>
+          <span class="hsb-sep">|</span>
+          <span class="hsb-item"><span class="hsb-dot hsb-dot--green"></span>RISK MATRIX NOMINAL</span>
         </div>
         <h1 class="animate-in animate-delay-1">
           <span class="gradient">DALIOS</span><br>
@@ -49,10 +62,10 @@
         <p class="hero-desc animate-in animate-delay-2">
           An autonomous AI trading bot that never sleeps. It scans 300+ ASX equities and
           global commodities, generates signals, executes trades, and manages risk — all on its own.
-          Built on Ray Dalio's All Weather strategy. One payment, lifetime updates. No subscriptions, no BS.
+          Built on Ray Dalio's All Weather strategy. Free to download. No subscriptions, no BS.
         </p>
         <div class="hero-actions animate-in animate-delay-3">
-          <a href="buy.html" class="btn btn-primary">
+          <a href="https://github.com/defthrets/dalio-trading-system/releases/latest" class="btn btn-primary">
             &#11015; Download Now
           </a>
           <a href="preview.html" class="btn btn-secondary">
@@ -273,9 +286,9 @@
           <span class="broker-tag">IB</span>
           <div><strong>Interactive Brokers</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">ASX, Global, Options</span></div>
         </div>
-        <div class="broker-item" style="border-color:rgba(34,197,94,0.5);">
-          <span class="broker-tag" style="background:rgba(34,197,94,0.15);color:var(--green);">IG</span>
-          <div><strong>IG Markets AU</strong><br><span style="font-size:0.8rem;color:var(--green);">CFDs, FX, Indices</span></div>
+        <div class="broker-item">
+          <span class="broker-tag">IG</span>
+          <div><strong>IG Markets AU</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">CFDs, FX, Indices</span></div>
         </div>
         <div class="broker-item">
           <span class="broker-tag">CMC</span>
@@ -301,10 +314,39 @@
           <span class="broker-tag">FC</span>
           <div><strong>FinClear</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Wholesale execution</span></div>
         </div>
+        <div class="broker-item">
+          <span class="broker-tag">OM</span>
+          <div><strong>Open Markets</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">ASX execution</span></div>
+        </div>
+        <div class="broker-item">
+          <span class="broker-tag">MT</span>
+          <div><strong>Marketech</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">ASX, ETFs</span></div>
+        </div>
+        <div class="broker-item">
+          <span class="broker-tag">OT</span>
+          <div><strong>OpenTrader</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">ASX equities</span></div>
+        </div>
+        <div class="broker-item">
+          <span class="broker-tag">IR</span>
+          <div><strong>IRESS</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Order routing</span></div>
+        </div>
+        <div class="broker-item">
+          <span class="broker-tag">COG</span>
+          <div><strong>COG Financial</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Institutional</span></div>
+        </div>
+        <div class="broker-item">
+          <span class="broker-tag">FX</span>
+          <div><strong>FlexTrade</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Multi-asset EMS</span></div>
+        </div>
+        <div class="broker-item">
+          <span class="broker-tag">TV</span>
+          <div><strong>TradingView</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Charting + alerts</span></div>
+        </div>
+        <div class="broker-item">
+          <span class="broker-tag">EOD</span>
+          <div><strong>EODHD</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Historical data</span></div>
+        </div>
       </div>
-      <p style="text-align:center;font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);margin-top:1.5rem;">
-        + Open Markets, Marketech, OpenTrader, IRESS, COG, FlexTrade, TradingView, EODHD
-      </p>
     </div>
   </section>
 
@@ -315,7 +357,7 @@
         <img src="assets/rex/rex-broke.png" alt="Rex needs DALIOS" class="rex-mascot" style="max-width:140px;margin:0 auto 1rem;">
         <span class="section-label">// Download</span>
         <h2>Get DALIOS</h2>
-        <p>$29 once. Forever. Lifetime updates, no subscriptions, no hidden fees.</p>
+        <p>Free to download. No subscriptions, no hidden fees.</p>
         <div class="download-stats">
           <span class="download-stats-count"><span id="download-count">0</span> downloads</span>
         </div>
@@ -325,21 +367,21 @@
           <div class="download-icon">&#128187;</div>
           <h3>Windows</h3>
           <p>Windows 10/11 (64-bit)</p>
-          <a href="buy.html" class="btn btn-primary btn-sm">&#11015; Download</a>
-          <span class="download-meta">v2.0.0 &middot; ~54 MB</span>
+          <a href="https://github.com/defthrets/dalio-trading-system/releases/latest" class="btn btn-primary btn-sm">&#11015; Download</a>
+          <span class="download-meta">v2.4.0 &middot; ~54 MB</span>
         </div>
         <div class="download-card">
           <div class="download-icon">&#63743;</div>
           <h3>macOS</h3>
           <p>macOS 12+ (Intel &amp; Apple Silicon)</p>
-          <a href="buy.html" class="btn btn-primary btn-sm">&#11015; Download</a>
-          <span class="download-meta">v2.0.0 &middot; Coming soon</span>
+          <a href="https://github.com/defthrets/dalio-trading-system/releases/latest" class="btn btn-primary btn-sm">&#11015; Download</a>
+          <span class="download-meta">v2.4.0 &middot; Coming soon</span>
         </div>
         <div class="download-card">
           <div class="download-icon">&#128039;</div>
           <h3>Linux</h3>
           <p>Ubuntu 20.04+ / Debian / Fedora</p>
-          <a href="buy.html" class="btn btn-primary btn-sm">&#11015; Download</a>
+          <a href="https://github.com/defthrets/dalio-trading-system/releases/latest" class="btn btn-primary btn-sm">&#11015; Download</a>
           <span class="download-meta">v2.0.0 &middot; ~91 MB</span>
         </div>
       </div>
@@ -427,9 +469,9 @@
         <div class="cta-text">
           <span class="section-label">// Ready to Deploy</span>
           <h2>Take Command of Your Portfolio</h2>
-          <p>$29 once — lifetime updates, no subscriptions. Start autonomous trading with military-grade risk management.</p>
+          <p>Free to download — start autonomous trading with military-grade risk management.</p>
           <div style="display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;">
-            <a href="buy.html" class="btn btn-primary">&#11015; Download Now</a>
+            <a href="https://github.com/defthrets/dalio-trading-system/releases/latest" class="btn btn-primary">&#11015; Download Now</a>
             <a href="docs.html" class="btn btn-secondary">&#9654; Read the Docs</a>
             <a href="preview.html" class="btn btn-secondary">&#9632; See Screenshots</a>
           </div>
@@ -449,7 +491,7 @@
         <div class="footer-links">
           <a href="docs.html">Docs</a>
           <a href="preview.html">Screenshots</a>
-          <a href="buy.html">Buy</a>
+          <a href="https://github.com/defthrets/dalio-trading-system/releases/latest">Download</a>
           <a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank">Discord</a>
         </div>
       </div>

@@ -69,6 +69,35 @@ async function loadDownloadStats() {
 
 document.addEventListener('DOMContentLoaded', loadDownloadStats);
 
+// ── Hero Tag Typing Animation ──
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('heroTagTyping');
+  if (!el) return;
+  const lines = [
+    'SYSTEM ONLINE — AUTONOMOUS TRADING ACTIVATED',
+    'SCANNING 1,900+ ASX TICKERS...',
+    'SIGNAL ENGINE ARMED — 16 BROKERS CONNECTED',
+    'ALL WEATHER PROTOCOL ENGAGED',
+    'RISK MATRIX NOMINAL — CIRCUIT BREAKERS SET',
+  ];
+  let lineIdx = 0, charIdx = 0, deleting = false, pause = 0;
+  function tick() {
+    const line = lines[lineIdx];
+    if (pause > 0) { pause--; requestAnimationFrame(tick); return; }
+    if (!deleting) {
+      el.textContent = line.slice(0, charIdx + 1);
+      charIdx++;
+      if (charIdx >= line.length) { deleting = true; pause = 90; }
+    } else {
+      el.textContent = line.slice(0, charIdx);
+      charIdx--;
+      if (charIdx <= 0) { deleting = false; lineIdx = (lineIdx + 1) % lines.length; pause = 15; }
+    }
+    setTimeout(tick, deleting ? 20 : 45);
+  }
+  tick();
+});
+
 // ── Legal Modal ──
 const _LEGAL_CONTENT = {
   privacy: {
