@@ -69,9 +69,10 @@ async function loadDownloadStats() {
 
 document.addEventListener('DOMContentLoaded', loadDownloadStats);
 
-// ── Hero Tag Typing Animation ──
+// ── Hero Tag Typing + Glitch Swap Animation ──
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.getElementById('heroTagTyping');
+  const cursor = document.querySelector('.tag-cursor');
   if (!el) return;
   const lines = [
     'SYSTEM ONLINE — AUTONOMOUS TRADING ACTIVATED',
@@ -80,22 +81,56 @@ document.addEventListener('DOMContentLoaded', () => {
     'ALL WEATHER PROTOCOL ENGAGED',
     'RISK MATRIX NOMINAL — CIRCUIT BREAKERS SET',
   ];
-  let lineIdx = 0, charIdx = 0, deleting = false, pause = 0;
-  function tick() {
-    const line = lines[lineIdx];
-    if (pause > 0) { pause--; requestAnimationFrame(tick); return; }
-    if (!deleting) {
-      el.textContent = line.slice(0, charIdx + 1);
-      charIdx++;
-      if (charIdx >= line.length) { deleting = true; pause = 90; }
+  const glitchChars = '!@#$%&*_+=<>?/\\|';
+  let lineIdx = 0, typed = false;
+
+  // Type out first line character by character
+  let i = 0;
+  function typeFirst() {
+    el.textContent = lines[0].slice(0, i + 1);
+    i++;
+    if (i < lines[0].length) {
+      setTimeout(typeFirst, 40);
     } else {
-      el.textContent = line.slice(0, charIdx);
-      charIdx--;
-      if (charIdx <= 0) { deleting = false; lineIdx = (lineIdx + 1) % lines.length; pause = 15; }
+      typed = true;
+      if (cursor) cursor.style.animation = 'blink-cursor 0.7s step-end infinite';
+      setTimeout(nextLine, 3000);
     }
-    setTimeout(tick, deleting ? 20 : 45);
   }
-  tick();
+
+  // Glitch-swap to next line (same width, no resize)
+  function glitchSwap(newText) {
+    const len = newText.length;
+    let step = 0;
+    const totalSteps = 6;
+    function frame() {
+      if (step < totalSteps) {
+        // Random glitch characters
+        let out = '';
+        for (let c = 0; c < len; c++) {
+          out += Math.random() < 0.6
+            ? glitchChars[Math.floor(Math.random() * glitchChars.length)]
+            : newText[c];
+        }
+        el.textContent = out;
+        el.style.opacity = Math.random() < 0.3 ? '0.4' : '1';
+        step++;
+        setTimeout(frame, 50);
+      } else {
+        el.textContent = newText;
+        el.style.opacity = '1';
+        setTimeout(nextLine, 4000);
+      }
+    }
+    frame();
+  }
+
+  function nextLine() {
+    lineIdx = (lineIdx + 1) % lines.length;
+    glitchSwap(lines[lineIdx]);
+  }
+
+  typeFirst();
 });
 
 // ── Legal Modal ──
