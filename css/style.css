@@ -307,71 +307,61 @@ code, pre {
 }
 
 /* Hero large cash stack */
+/*
+ * Hero cash — one solid 3D rectangular block
+ * Box: W=60  H=36  D=14 (thin stack of bills)
+ * Front/Back = bill face,  4 edges = stacked paper lines
+ */
 .cash3d-hero {
-  width: 80px;
-  height: 56px;
-  transform: scale(3.5);
+  width: 60px;
+  height: 36px;
+  transform: scale(4);
 }
 .cash3d-hero .cash3d-scene {
   width: 60px;
-  height: 40px;
-  perspective: 400px;
+  height: 36px;
+  perspective: 300px;
 }
-.cash3d-hero .cash3d-rotator {
-  transform-style: preserve-3d;
-}
-/* Front & back faces */
+/* Front & Back — bill faces */
 .cash3d-hero .cash3d-front,
 .cash3d-hero .cash3d-back {
-  width: 60px; height: 40px;
+  width: 60px; height: 36px;
   top: 0; left: 0;
+  transform-origin: center center;
 }
-.cash3d-hero .cash3d-front { transform: translateZ(12px); }
-.cash3d-hero .cash3d-back { transform: translateZ(-12px) rotateY(180deg); }
-/* Side faces — same height, depth width */
+.cash3d-hero .cash3d-front { transform: translateZ(7px); }
+.cash3d-hero .cash3d-back  { transform: rotateY(180deg) translateZ(7px); }
+/* Right & Left — stack depth edges */
 .cash3d-hero .cash3d-right {
-  width: 24px; height: 40px;
-  top: 0; left: 60px;
-  transform-origin: left center;
-  transform: rotateY(90deg) translateX(-12px);
+  width: 14px; height: 36px;
+  top: 0; left: 23px;
+  transform-origin: center center;
+  transform: rotateY(90deg) translateZ(30px);
 }
 .cash3d-hero .cash3d-left {
-  width: 24px; height: 40px;
-  top: 0; left: -24px;
-  transform-origin: right center;
-  transform: rotateY(-90deg) translateX(12px);
+  width: 14px; height: 36px;
+  top: 0; left: 23px;
+  transform-origin: center center;
+  transform: rotateY(-90deg) translateZ(30px);
 }
-/* Top & bottom — close the box */
+/* Top & Bottom — stack depth edges */
 .cash3d-hero .cash3d-top {
-  width: 60px; height: 24px;
-  top: -12px; left: 0;
-  transform: rotateX(90deg) translateZ(12px);
+  width: 60px; height: 14px;
+  top: 11px; left: 0;
+  transform-origin: center center;
+  transform: rotateX(90deg) translateZ(18px);
 }
 .cash3d-hero .cash3d-bottom {
-  width: 60px; height: 24px;
-  top: 28px; left: 0;
-  transform: rotateX(-90deg) translateZ(12px);
+  width: 60px; height: 14px;
+  top: 11px; left: 0;
+  transform-origin: center center;
+  transform: rotateX(-90deg) translateZ(18px);
 }
-.cash3d-hero .bill-oval { width: 18px; height: 18px; }
-.cash3d-hero .bill-dollar { font-size: 18px; }
-.cash3d-hero .bill-100 { font-size: 8px; }
-/* Band wraps around the stack */
-.cash3d-hero .band-front,
-.cash3d-hero .band-back {
-  width: 16px; height: 40px;
-  top: 0; left: 22px;
-}
-.cash3d-hero .band-front { transform: translateZ(12.5px); }
-.cash3d-hero .band-back { transform: translateZ(-12.5px) rotateY(180deg); }
-.cash3d-hero .band-top,
-.cash3d-hero .band-bottom {
-  width: 16px; height: 25px;
-  left: 22px;
-}
-.cash3d-hero .band-top { top: -12.5px; transform: rotateX(90deg) translateZ(12.5px); }
-.cash3d-hero .band-bottom { top: 27.5px; transform: rotateX(-90deg) translateZ(12.5px); }
-.cash3d-hero .band-front::after,
-.cash3d-hero .band-back::after { font-size: 12px; }
+.cash3d-hero .bill-oval { width: 16px; height: 16px; }
+.cash3d-hero .bill-dollar { font-size: 16px; }
+.cash3d-hero .bill-100 { font-size: 7px; }
+/* Hide band overlays on hero — keep it clean */
+.cash3d-hero .band-face { display: none; }
 
 /* Heavy glitch effect on hero cash — separate div so it doesn't fight scale/spin */
 .hero-cash-glitch {
