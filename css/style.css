@@ -379,7 +379,11 @@ code, pre {
   border: 1px solid rgba(251,146,60,0.4);
 }
 .cash3d-hero .bill-oval { width: 16px; height: 16px; }
-.cash3d-hero .bill-dollar { display: none; }
+.cash3d-hero .bill-dollar {
+  font-size: 14px;
+  color: rgba(249,115,22,0.9);
+  text-shadow: 0 0 6px rgba(249,115,22,0.6);
+}
 .cash3d-hero .bill-100 { font-size: 7px; }
 /* Band wrapping around the stack — red */
 .cash3d-hero .band-face {
