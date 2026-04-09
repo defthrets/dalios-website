@@ -904,8 +904,9 @@ section {
 
 /* ── Tech Stack ── */
 .tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -913,6 +914,8 @@ section {
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: calc(25% - 0.75rem);
+  min-width: 200px;
   padding: 1rem 1.25rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
