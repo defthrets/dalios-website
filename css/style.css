@@ -125,7 +125,7 @@ code, pre {
   width: 60%;
   height: 3px;
   background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.4), transparent);
-  animation: nav-glow-sweep 3s ease-in-out infinite;
+  animation: nav-glow-sweep 2s ease-in-out infinite;
 }
 
 @keyframes nav-glow-sweep {
