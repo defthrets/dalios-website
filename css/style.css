@@ -105,7 +105,7 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(180deg, #353030, #2a2524, #1c1917);
+  background: linear-gradient(180deg, #2a2625, #231f1e, #1c1917);
   backdrop-filter: blur(20px);
   border-bottom: none;
   box-shadow: 0 0 40px rgba(249, 115, 22, 0.03);
