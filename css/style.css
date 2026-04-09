@@ -105,12 +105,11 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(90deg, rgba(35, 30, 27, 0.97), rgba(50, 44, 38, 0.97), rgba(35, 30, 27, 0.97), rgba(50, 44, 38, 0.97));
-  background-size: 300% 100%;
-  animation: nav-shimmer 4s ease-in-out infinite;
+  background: rgba(12, 10, 9, 0.96);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(249, 115, 22, 0.25);
-  box-shadow: 0 2px 30px rgba(249, 115, 22, 0.1);
+  border-bottom: 1px solid rgba(249, 115, 22, 0.08);
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.03);
+  overflow: hidden;
   padding: 0 2rem;
   height: 64px;
   display: flex;
@@ -118,9 +117,20 @@ code, pre {
   justify-content: space-between;
 }
 
-@keyframes nav-shimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.4), transparent);
+  animation: nav-glow-sweep 6s ease-in-out infinite;
+}
+
+@keyframes nav-glow-sweep {
+  0% { left: -60%; }
+  100% { left: 100%; }
 }
 
 .nav-brand {
@@ -954,6 +964,181 @@ section {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-muted);
+}
+
+/* ── Ops Demo (Radar + Log) ── */
+.ops-demo-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: stretch;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ops-demo-radar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 10, 9, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.ops-demo-radar-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-radar-svg {
+  width: 180px;
+  height: 180px;
+}
+
+.demo-radar-beam {
+  transform-origin: 60px 60px;
+  animation: demoBeamSpin 3s linear infinite;
+}
+
+@keyframes demoBeamSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.demo-blip {
+  opacity: 0;
+  animation: demoBlipPulse 3s ease infinite;
+}
+
+.demo-blip--green { fill: #22c55e; }
+.demo-blip--amber { fill: #f59e0b; }
+.demo-blip--red { fill: #ef4444; }
+
+@keyframes demoBlipPulse {
+  0% { opacity: 0; r: 1; }
+  15% { opacity: 0.9; r: 2.5; }
+  80% { opacity: 0.3; r: 1.5; }
+  100% { opacity: 0; r: 1; }
+}
+
+.demo-center-dot {
+  animation: demoCenterPulse 1.5s ease infinite;
+}
+
+@keyframes demoCenterPulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.5; }
+}
+
+.demo-radar-scanline {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 10%, rgba(255,140,0,0.12) 30%, rgba(255,140,0,0.2) 50%, rgba(255,140,0,0.12) 70%, transparent 90%);
+  animation: demoScanline 2.5s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes demoScanline {
+  from { top: 0; }
+  to { top: 100%; }
+}
+
+.demo-radar-label {
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.demo-radar-dot {
+  color: #22c55e;
+  animation: demoRadarDotPulse 2s ease infinite;
+  margin-right: 4px;
+  font-size: 8px;
+}
+
+@keyframes demoRadarDotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.ops-demo-terminal {
+  background: rgba(12, 10, 9, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.ops-demo-term-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ops-demo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.ops-demo-term-title {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.ops-demo-term-body {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+.ops-demo-line {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: opsLineIn 0.3s ease both;
+}
+
+@keyframes opsLineIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ops-demo-ts { color: var(--text-muted); margin-right: 8px; }
+.ops-demo-cmd { color: #f59e0b; font-weight: 700; margin-right: 8px; }
+.ops-demo-msg { color: #22c55e; }
+.ops-demo-msg.warn { color: #f59e0b; }
+.ops-demo-msg.err { color: #ef4444; }
+
+@media (max-width: 768px) {
+  .ops-demo-grid {
+    grid-template-columns: 1fr;
+  }
+  .ops-demo-radar {
+    max-width: 280px;
+    margin: 0 auto;
+  }
 }
 
 /* ── CTA Section ── */

@@ -230,6 +230,74 @@ function closeLegalModal() {
   document.getElementById('legalModalOverlay').classList.add('hidden');
 }
 
+// ── Demo Ops Log ──
+document.addEventListener('DOMContentLoaded', () => {
+  const log = document.getElementById('demoOpsLog');
+  if (!log) return;
+
+  const entries = [
+    { cmd: 'SYS.BOOT', msg: 'DALIOS framework initialising...' },
+    { cmd: 'NET.LINK', msg: 'WebSocket connected to /ws' },
+    { cmd: 'MKT.SCAN', msg: 'Loading 300 ASX assets...' },
+    { cmd: 'QDR.CALC', msg: 'Quadrant: Q2 — Rising growth, rising inflation' },
+    { cmd: 'SIG.GEN', msg: 'BHP.AX — BUY signal — confidence 0.87' },
+    { cmd: 'SIG.GEN', msg: 'CBA.AX — HOLD — confidence 0.52', cls: 'warn' },
+    { cmd: 'RSK.CHK', msg: 'Portfolio drawdown: -2.1% — within limits' },
+    { cmd: 'ORD.EXEC', msg: 'BHP.AX — BUY 150 @ $45.20 — FILLED' },
+    { cmd: 'MKT.SCAN', msg: 'Scanning full ASX universe (~1,900 tickers)...' },
+    { cmd: 'SIG.GEN', msg: 'FMG.AX — BUY signal — confidence 0.91' },
+    { cmd: 'SIG.GEN', msg: 'WDS.AX — SELL signal — confidence 0.78', cls: 'err' },
+    { cmd: 'NWS.FEED', msg: 'FinBERT sentiment: 12 articles — net bullish +0.34' },
+    { cmd: 'RSK.CHK', msg: 'Circuit breaker: nominal — daily P&L +1.4%' },
+    { cmd: 'SIG.GEN', msg: 'RIO.AX — BUY signal — confidence 0.83' },
+    { cmd: 'ORD.EXEC', msg: 'FMG.AX — BUY 200 @ $21.85 — FILLED' },
+    { cmd: 'MKT.DATA', msg: 'Gold $2,412 (+0.8%) — Lithium $14,200 (+1.2%)' },
+    { cmd: 'QDR.CALC', msg: 'Regime shift detected — monitoring...' , cls: 'warn' },
+    { cmd: 'HLY.GRAL', msg: 'Diversification score: 0.82 — 15 uncorrelated streams' },
+    { cmd: 'AGT.LOOP', msg: 'Autonomous cycle complete — next scan in 60s' },
+    { cmd: 'SIG.GEN', msg: 'NCM.AX — BUY signal — confidence 0.76' },
+    { cmd: 'RSK.PAR', msg: 'Risk parity rebalance: 6 positions adjusted' },
+    { cmd: 'NTF.SEND', msg: 'Discord alert: 3 new BUY signals dispatched' },
+  ];
+
+  const maxLines = 14;
+  let idx = 0;
+
+  function now() {
+    const d = new Date();
+    return [d.getHours(), d.getMinutes(), d.getSeconds()]
+      .map(n => String(n).padStart(2, '0')).join(':');
+  }
+
+  function addLine() {
+    const e = entries[idx % entries.length];
+    const div = document.createElement('div');
+    div.className = 'ops-demo-line';
+    div.innerHTML =
+      '<span class="ops-demo-ts">' + now() + '</span>' +
+      '<span class="ops-demo-cmd">' + e.cmd + '</span>' +
+      '<span class="ops-demo-msg' + (e.cls ? ' ' + e.cls : '') + '">' + e.msg + '</span>';
+    log.appendChild(div);
+    if (log.children.length > maxLines) log.removeChild(log.firstChild);
+    idx++;
+    setTimeout(addLine, 1800 + Math.random() * 2200);
+  }
+
+  // Start with a few lines immediately
+  for (let i = 0; i < 5; i++) {
+    const e = entries[i];
+    const div = document.createElement('div');
+    div.className = 'ops-demo-line';
+    div.innerHTML =
+      '<span class="ops-demo-ts">' + now() + '</span>' +
+      '<span class="ops-demo-cmd">' + e.cmd + '</span>' +
+      '<span class="ops-demo-msg' + (e.cls ? ' ' + e.cls : '') + '">' + e.msg + '</span>';
+    log.appendChild(div);
+    idx++;
+  }
+  setTimeout(addLine, 2000);
+});
+
 // Copy code button
 function copyCode(btn) {
   const codeBlock = btn.closest('.code-block');

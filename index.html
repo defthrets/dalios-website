@@ -152,6 +152,68 @@
     </div>
   </section>
 
+  <!-- Ops Radar + Live Log -->
+  <section style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">// Live Operations</span>
+        <h2>DALIOS Ops Center</h2>
+        <p>Real-time signal radar and autonomous operations feed — always scanning, always trading.</p>
+      </div>
+      <div class="ops-demo-grid">
+        <!-- Radar -->
+        <div class="ops-demo-radar">
+          <div class="ops-demo-radar-wrap">
+            <div class="demo-radar-scanline"></div>
+            <svg class="demo-radar-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="55" fill="none" stroke="rgba(255,140,0,0.1)" stroke-width="0.5"/>
+              <circle cx="60" cy="60" r="40" fill="none" stroke="rgba(255,140,0,0.08)" stroke-width="0.5"/>
+              <circle cx="60" cy="60" r="25" fill="none" stroke="rgba(255,140,0,0.06)" stroke-width="0.5"/>
+              <circle cx="60" cy="60" r="10" fill="none" stroke="rgba(255,140,0,0.05)" stroke-width="0.5"/>
+              <line x1="60" y1="2" x2="60" y2="118" stroke="rgba(255,140,0,0.06)" stroke-width="0.5"/>
+              <line x1="2" y1="60" x2="118" y2="60" stroke="rgba(255,140,0,0.06)" stroke-width="0.5"/>
+              <line x1="20" y1="20" x2="100" y2="100" stroke="rgba(255,140,0,0.03)" stroke-width="0.3" stroke-dasharray="3,8"/>
+              <line x1="100" y1="20" x2="20" y2="100" stroke="rgba(255,140,0,0.03)" stroke-width="0.3" stroke-dasharray="3,8"/>
+              <path class="demo-radar-beam" d="M60,60 L60,5 A55,55 0 0,1 107,35 Z" fill="url(#demoRadarGrad)"/>
+              <g class="demo-blips">
+                <circle cx="42" cy="30" r="2" class="demo-blip demo-blip--green"/>
+                <circle cx="78" cy="45" r="2" class="demo-blip demo-blip--green" style="animation-delay:0.8s"/>
+                <circle cx="35" cy="70" r="2" class="demo-blip demo-blip--amber" style="animation-delay:1.6s"/>
+                <circle cx="85" cy="75" r="2" class="demo-blip demo-blip--green" style="animation-delay:2.2s"/>
+                <circle cx="55" cy="48" r="2" class="demo-blip demo-blip--green" style="animation-delay:0.4s"/>
+                <circle cx="70" cy="82" r="2" class="demo-blip demo-blip--red" style="animation-delay:1.2s"/>
+                <circle cx="28" cy="52" r="2" class="demo-blip demo-blip--green" style="animation-delay:2.8s"/>
+                <circle cx="90" cy="55" r="2" class="demo-blip demo-blip--amber" style="animation-delay:1.8s"/>
+              </g>
+              <circle cx="60" cy="60" r="2.5" fill="#f59e0b" opacity="0.9" class="demo-center-dot"/>
+              <circle cx="60" cy="60" r="4" fill="none" stroke="#f59e0b" stroke-width="0.5" opacity="0.4"/>
+              <defs>
+                <radialGradient id="demoRadarGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="rgba(255,140,0,0.18)"/>
+                  <stop offset="100%" stop-color="transparent"/>
+                </radialGradient>
+              </defs>
+            </svg>
+            <div class="demo-radar-label">
+              <span class="demo-radar-dot">&#9679;</span>
+              SCANNING ASX
+            </div>
+          </div>
+        </div>
+        <!-- Live Ops Log -->
+        <div class="ops-demo-terminal">
+          <div class="ops-demo-term-header">
+            <span class="ops-demo-dot" style="background:#ef4444;"></span>
+            <span class="ops-demo-dot" style="background:#f59e0b;"></span>
+            <span class="ops-demo-dot" style="background:#22c55e;"></span>
+            <span class="ops-demo-term-title">LIVE OPS LOG</span>
+          </div>
+          <div class="ops-demo-term-body" id="demoOpsLog"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Features Section -->
   <section id="features">
     <div class="container">
