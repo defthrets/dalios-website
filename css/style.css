@@ -105,7 +105,7 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(90deg, #1c1917, #3a3330, #524a44);
+  background: linear-gradient(180deg, #524a44, #3a3330, #1c1917);
   backdrop-filter: blur(20px);
   border-bottom: none;
   box-shadow: 0 0 40px rgba(249, 115, 22, 0.03);
@@ -250,7 +250,7 @@ code, pre {
 }
 .stack-edge {
   width: 100%; height: 100%;
-  background: repeating-linear-gradient(0deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
+  background: repeating-linear-gradient(90deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
   border: 1px solid rgba(0,212,255,0.5);
 }
 .stack-edge-h {
@@ -360,8 +360,23 @@ code, pre {
 .cash3d-hero .bill-oval { width: 16px; height: 16px; }
 .cash3d-hero .bill-dollar { font-size: 16px; }
 .cash3d-hero .bill-100 { font-size: 7px; }
-/* Hide band overlays on hero — keep it clean */
-.cash3d-hero .band-face { display: none; }
+/* Band wrapping around the stack */
+.cash3d-hero .band-front,
+.cash3d-hero .band-back {
+  width: 14px; height: 36px;
+  top: 0; left: 23px;
+}
+.cash3d-hero .band-front { transform: translateZ(7.5px); }
+.cash3d-hero .band-back  { transform: rotateY(180deg) translateZ(7.5px); }
+.cash3d-hero .band-top,
+.cash3d-hero .band-bottom {
+  width: 14px; height: 14px;
+  left: 23px;
+}
+.cash3d-hero .band-top { top: -7px; transform: rotateX(90deg) translateZ(18px); }
+.cash3d-hero .band-bottom { top: 29px; transform: rotateX(-90deg) translateZ(18px); }
+.cash3d-hero .band-front::after,
+.cash3d-hero .band-back::after { font-size: 10px; }
 
 /* Heavy glitch effect on hero cash — separate div so it doesn't fight scale/spin */
 .hero-cash-glitch {
