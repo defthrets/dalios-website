@@ -105,7 +105,7 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(90deg, #1c1917, #3a3330, #524a44);
+  background: linear-gradient(180deg, #524a44, #3a3330, #1c1917);
   backdrop-filter: blur(20px);
   border-bottom: none;
   box-shadow: 0 0 40px rgba(249, 115, 22, 0.03);
@@ -326,12 +326,14 @@ code, pre {
 .cash3d-hero .cash3d-right {
   width: 32px; height: 32px;
   top: 16px; left: 43px;
+  transform-origin: left center;
   transform: rotateY(90deg) translateZ(-16px);
 }
 .cash3d-hero .cash3d-left {
   width: 32px; height: 32px;
   top: 16px; left: 9px;
-  transform: rotateY(-90deg) translateZ(16px);
+  transform-origin: right center;
+  transform: rotateY(-90deg) translateZ(-16px);
 }
 .cash3d-hero .cash3d-top {
   width: 50px; height: 32px;
