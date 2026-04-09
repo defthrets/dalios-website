@@ -250,8 +250,15 @@ code, pre {
 }
 .stack-edge {
   width: 100%; height: 100%;
-  background: repeating-linear-gradient(90deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
+  background: repeating-linear-gradient(0deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
   border: 1px solid rgba(0,212,255,0.5);
+}
+/* Hero side edges — vertical lines */
+.cash3d-hero .stack-edge {
+  background: repeating-linear-gradient(90deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
+}
+.cash3d-hero .stack-edge-h {
+  background: repeating-linear-gradient(90deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
 }
 .stack-edge-h {
   width: 100%; height: 100%;
@@ -360,14 +367,19 @@ code, pre {
 .cash3d-hero .bill-oval { width: 16px; height: 16px; }
 .cash3d-hero .bill-dollar { font-size: 16px; }
 .cash3d-hero .bill-100 { font-size: 7px; }
-/* Band wrapping around the stack */
+/* Band wrapping around the stack — sits just outside the box faces */
+.cash3d-hero .band-face {
+  background: linear-gradient(90deg, rgba(0,255,170,0.2) 0%, rgba(0,255,170,0.5) 40%, rgba(0,212,255,0.5) 60%, rgba(0,255,170,0.2) 100%);
+  border: 1px solid rgba(0,255,170,0.8);
+  box-shadow: 0 0 8px rgba(0,255,170,0.4), inset 0 0 4px rgba(0,255,170,0.2);
+}
 .cash3d-hero .band-front,
 .cash3d-hero .band-back {
   width: 14px; height: 36px;
   top: 0; left: 23px;
 }
-.cash3d-hero .band-front { transform: translateZ(7.5px); }
-.cash3d-hero .band-back  { transform: rotateY(180deg) translateZ(7.5px); }
+.cash3d-hero .band-front { transform: translateZ(7.2px); }
+.cash3d-hero .band-back  { transform: rotateY(180deg) translateZ(7.2px); }
 .cash3d-hero .band-top,
 .cash3d-hero .band-bottom {
   width: 14px; height: 14px;
