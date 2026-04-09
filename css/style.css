@@ -290,8 +290,10 @@ code, pre {
 
 /* Hero large cash stack */
 .cash3d-hero {
-  width: 80px;
-  height: 80px;
+  width: 130px;
+  height: 130px;
+  transform: scale(1.6);
+  margin-bottom: 0.5rem;
 }
 .cash3d-hero .cash3d-scene {
   width: 68px;
