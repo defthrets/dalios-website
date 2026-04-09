@@ -259,7 +259,7 @@ code, pre {
   border: 1px solid rgba(0,212,255,0.5);
 }
 .cash3d-hero .stack-edge-h {
-  background: repeating-linear-gradient(90deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
+  background: repeating-linear-gradient(0deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
   border: 1px solid rgba(0,212,255,0.5);
 }
 .stack-edge-h {
