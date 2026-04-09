@@ -105,7 +105,7 @@ code, pre {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(90deg, rgba(55, 48, 42, 0.97), rgba(75, 65, 55, 0.97), rgba(55, 48, 42, 0.97), rgba(75, 65, 55, 0.97));
+  background: linear-gradient(90deg, rgba(35, 30, 27, 0.97), rgba(50, 44, 38, 0.97), rgba(35, 30, 27, 0.97), rgba(50, 44, 38, 0.97));
   background-size: 300% 100%;
   animation: nav-shimmer 4s ease-in-out infinite;
   backdrop-filter: blur(20px);
