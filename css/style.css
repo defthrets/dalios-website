@@ -140,9 +140,13 @@ code, pre {
 }
 
 /* ── 3D Cash Stack Logo (GTA-style) ── */
+/*
+ * Nav cash — joined 3D box
+ * Box: W=30  H=18  D=7
+ */
 .cash3d {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,8 +154,8 @@ code, pre {
   flex-shrink: 0;
 }
 .cash3d-scene {
-  width: 38px;
-  height: 36px;
+  width: 30px;
+  height: 18px;
   perspective: 200px;
   position: relative;
 }
@@ -170,41 +174,36 @@ code, pre {
   position: absolute;
   backface-visibility: visible;
 }
-.cash3d-front {
-  width: 28px; height: 18px;
-  top: 9px; left: 5px;
-  transform: translateZ(9px);
-}
+/* Front & back */
+.cash3d-front,
 .cash3d-back {
-  width: 28px; height: 18px;
-  top: 9px; left: 5px;
-  transform: translateZ(-9px) rotateY(180deg);
+  width: 30px; height: 18px;
+  top: 0; left: 0;
 }
+.cash3d-front { transform: translateZ(3.5px); }
+.cash3d-back  { transform: rotateY(180deg) translateZ(3.5px); }
+/* Sides */
 .cash3d-right {
-  width: 18px; height: 18px;
-  top: 9px; left: 24px;
-  transform-origin: left center;
-  transform: rotateY(90deg) translateZ(-9px);
+  width: 7px; height: 18px;
+  top: 0; left: 11.5px;
+  transform: rotateY(90deg) translateZ(15px);
 }
 .cash3d-left {
-  width: 18px; height: 18px;
-  top: 9px; left: 5px;
-  transform-origin: left center;
-  transform: rotateY(-90deg) translateZ(9px);
+  width: 7px; height: 18px;
+  top: 0; left: 11.5px;
+  transform: rotateY(-90deg) translateZ(15px);
 }
+/* Top & bottom */
 .cash3d-top {
-  width: 28px; height: 18px;
-  top: 0px; left: 5px;
+  width: 30px; height: 7px;
+  top: 5.5px; left: 0;
   transform: rotateX(90deg) translateZ(9px);
 }
 .cash3d-bottom {
-  width: 28px; height: 18px;
-  top: 18px; left: 5px;
+  width: 30px; height: 7px;
+  top: 5.5px; left: 0;
   transform: rotateX(-90deg) translateZ(9px);
 }
-.cash3d-top,
-.cash3d-bottom {
-  background: linear-gradient(180deg, rgba(0,212,255,0.1) 0%, rgba(0,40,50,0.3) 100%);
   border: 1px solid rgba(0,212,255,0.5);
 }
 .bill-face {
@@ -250,21 +249,12 @@ code, pre {
 }
 .stack-edge {
   width: 100%; height: 100%;
-  background: repeating-linear-gradient(0deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
-  border: 1px solid rgba(0,212,255,0.5);
-}
-/* Hero side edges — vertical blue lines */
-.cash3d-hero .stack-edge {
   background: repeating-linear-gradient(90deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
-  border: 1px solid rgba(0,212,255,0.5);
-}
-.cash3d-hero .stack-edge-h {
-  background: repeating-linear-gradient(0deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
   border: 1px solid rgba(0,212,255,0.5);
 }
 .stack-edge-h {
   width: 100%; height: 100%;
-  background: repeating-linear-gradient(90deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
+  background: repeating-linear-gradient(0deg, rgba(0,30,40,0.4) 0px, rgba(0,212,255,0.25) 0.8px, rgba(0,30,40,0.4) 1.6px);
   border: 1px solid rgba(0,212,255,0.5);
 }
 .band-face {
@@ -275,36 +265,28 @@ code, pre {
   box-shadow: 0 0 6px rgba(0,255,170,0.3), inset 0 0 4px rgba(0,255,170,0.15);
 }
 .band-front {
-  width: 8px; height: 18px;
-  top: 9px; left: 15px;
-  transform: translateZ(9.5px);
+  width: 7px; height: 18px;
+  top: 0; left: 11.5px;
+  transform: translateZ(3.8px);
 }
 .band-back {
-  width: 8px; height: 18px;
-  top: 9px; left: 15px;
-  transform: translateZ(-9.5px) rotateY(180deg);
+  width: 7px; height: 18px;
+  top: 0; left: 11.5px;
+  transform: rotateY(180deg) translateZ(3.8px);
 }
 .band-top {
-  width: 8px; height: 19px;
-  top: -0.5px; left: 15px;
-  transform: rotateX(90deg) translateZ(9.5px);
+  width: 7px; height: 7px;
+  top: 5.5px; left: 11.5px;
+  transform: rotateX(90deg) translateZ(9px);
 }
 .band-bottom {
-  width: 8px; height: 19px;
-  top: 17.5px; left: 15px;
-  transform: rotateX(-90deg) translateZ(9.5px);
+  width: 7px; height: 7px;
+  top: 5.5px; left: 11.5px;
+  transform: rotateX(-90deg) translateZ(9px);
 }
 .band-front::after,
 .band-back::after {
-  content: '$';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Georgia', serif;
-  font-size: 7px;
-  font-weight: bold;
-  color: rgba(0,255,170,0.7);
-  text-shadow: 0 0 4px rgba(0,255,170,0.5);
+  display: none;
 }
 @keyframes cashGlitch {
   0%, 88%, 92%, 100% { filter: none; }
